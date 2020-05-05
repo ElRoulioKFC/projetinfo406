@@ -1,56 +1,64 @@
 package frameGestion;
 
 import java.awt.*;
+import java.awt.event.*;
+
 import javax.swing.*;
 
-import controleur.ProjetListener;
+import controleur.*;
 
 public class FrameGestion extends JFrame{
 	final static int HAUTEUR = 600;
 	final static int LARGEUR = 1000;
+	JPanel accueil = new JPanel(new GridLayout(3,5));
+	JPanel ressources = new JPanel(new GridLayout(3,7));
+	
+	
 	
 	public FrameGestion() {
 		this.setTitle("Gestion des Ressources");
 		this.setSize(LARGEUR,HAUTEUR);
-//		MenuBar mb = new MenuBar();
-//		Menu m1 = new Menu("Ajouter");
-//		MenuItem i11 = new MenuItem("Personne");
-//		MenuItem i12 = new MenuItem("Salle");
-//		MenuItem i13 = new MenuItem("Ordinateur");
-//		m1.add(i11);  
-//        m1.add(i12);  
-//        m1.add(i13);
-//        Menu m2 = new Menu("Supprimer");
-//		MenuItem i21 = new MenuItem("Personne");
-//		MenuItem i22 = new MenuItem("Salle");
-//		MenuItem i23 = new MenuItem("Ordinateur");
-//		m2.add(i21);  
-//        m2.add(i22);  
-//        m2.add(i23);
-//        Menu m3 = new Menu("Projet");
-//        MenuItem i31 = new MenuItem("Créer");
-//        MenuItem i32 = new MenuItem("Supprimer");
-//        m3.add(i31);
-//        m3.add(i32);
-//        mb.add(m3);
-//        mb.add(m1);
-//		mb.add(m2);
-//		this.setMenuBar(mb);
 		
-		JPanel p = new JPanel(new GridLayout(3,7));
-		JButton projet = new JButton("Projet");
-		JButton personne = new JButton("Personne");
-		JButton materiel = new JButton("Matérielles");
-		p.add(new Label(" "));p.add(new Label(" "));p.add(new Label(" "));p.add(new Label(" "));p.add(new Label(" "));p.add(new Label(" "));p.add(new Label(" "));
-		p.add(new Label(" "));p.add(projet);p.add(new Label(" "));
-		p.add(personne);p.add(new Label(" "));
-		p.add(materiel);p.add(new Label(" "));
-		p.add(new Label(" "));p.add(new Label(" "));p.add(new Label(" "));p.add(new Label(" "));
-		p.add(new Label(" "));p.add(new Label(" "));p.add(new Label(" "));
+
+		this.setContentPane(accueil);
+		JButton projet = new JButton("Projets");
+		JButton ressource = new JButton("Ressources");
+		JButton employe = new JButton("Employés");
+		JButton ordinateur = new JButton("Ordinateur");
+		JButton salle = new JButton("Salles");
+		accueil.add(new Label(" "));accueil.add(new Label(" "));accueil.add(new Label(" "));accueil.add(new Label(" "));accueil.add(new Label(" "));
+		accueil.add(new Label(" "));accueil.add(projet);accueil.add(new Label(" "));
+		accueil.add(ressource);accueil.add(new Label(" "));
+		accueil.add(new Label(" "));accueil.add(new Label(" "));accueil.add(new Label(" "));accueil.add(new Label(" "));
+		accueil.add(new Label(" "));
 		projet.addActionListener(new ProjetListener());
-		this.add(p);
+		ressource.addActionListener(new RessourcesListener());
+		
+		ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));
+		ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));
+		ressources.add(employe);ressources.add(new Label(" "));
+		ressources.add(ordinateur);ressources.add(new Label(" "));
+		ressources.add(salle);ressources.add(new Label(" "));
+		ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));
+		ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));
 		this.setVisible(true);
+		
+
 	}
+	public void ressources(JPanel ress) {
+		this.setContentPane(ress);
+		this.revalidate();
+	}
+	
+	public class RessourcesListener implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			FrameGestion.this.ressources(ressources);
+			
+		}
+		
+	}
+
 
 	public static void main(String[] args) {
 		new FrameGestion();

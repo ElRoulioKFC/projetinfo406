@@ -3,18 +3,20 @@ package frameGestion;
 import java.awt.*;
 import javax.swing.*;
 
-public class FrameGestionProjet extends JFrame {
-	private ListeProjet lp;
+import FramePrincipale.FramePrincipale;
+
+public class FrameGestionEmployes extends JFrame {
+	private ListeEmployes le;
 	final static int HAUTEUR = 600;
 	final static int LARGEUR = 1000;
 	JPanel gauche = new JPanel(new BorderLayout());
 	JPanel bas = new JPanel(new GridLayout(1,2));
 	
-	public FrameGestionProjet() {
-		this.setTitle("Gestion des Projets");
+	public FrameGestionEmployes() {
+		this.setTitle("Gestion des Employes");
 		this.setSize(LARGEUR,HAUTEUR);
-		JButton ajouter = new JButton("Ajouter un Projet");
-		JButton supprimer = new JButton("Supprimer un Projet");
+		JButton ajouter = new JButton("Ajouter un Employé");
+		JButton supprimer = new JButton("Supprimer un Employé");
 		bas.add(ajouter);
 		bas.add(supprimer);
 		this.add(gauche,BorderLayout.WEST);
@@ -22,7 +24,11 @@ public class FrameGestionProjet extends JFrame {
 		
 		
 		
+		
 		this.setVisible(true);
+	}
+	public static void main (String [] args){
+		new FrameGestionEmployes ();
 	}
 
 }
