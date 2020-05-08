@@ -22,8 +22,6 @@ public class FrameGestionProjet extends JFrame {
 		this.add(gauche,BorderLayout.WEST);
 		gauche.add(bas,BorderLayout.SOUTH);
 		
-		
-		
 		this.setVisible(true);
 	}
 

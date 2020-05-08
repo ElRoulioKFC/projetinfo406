@@ -33,6 +33,9 @@ public class FrameGestion extends JFrame{
 		accueil.add(new Label(" "));
 		projet.addActionListener(new ProjetListener());
 		ressource.addActionListener(new RessourcesListener());
+		employe.addActionListener(new EmployesListener());
+		ordinateur.addActionListener(new OrdinateurListener());
+		salle.addActionListener(new SalleListener());
 		
 		ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));
 		ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));

@@ -7,6 +7,7 @@ import javax.swing.*;
 
 import controleur.*;
 import frameGestion.*;
+import frameGestion.FrameGestion.RessourcesListener;
 
 
 public class FramePrincipale extends JFrame {
@@ -48,8 +49,12 @@ public class FramePrincipale extends JFrame {
 		accueil.add(ressource);accueil.add(new Label(" "));
 		accueil.add(new Label(" "));accueil.add(new Label(" "));accueil.add(new Label(" "));accueil.add(new Label(" "));
 		accueil.add(new Label(" "));
+		
 		projet.addActionListener(new ProjetListener());
 		ressource.addActionListener(new RessourcesListener());
+		employe.addActionListener(new EmployesListener());
+		ordinateur.addActionListener(new OrdinateurListener());
+		salle.addActionListener(new SalleListener());
 		
 		ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));
 		ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));
@@ -58,7 +63,6 @@ public class FramePrincipale extends JFrame {
 		ressources.add(salle);ressources.add(new Label(" "));
 		ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));
 		ressources.add(new Label(" "));ressources.add(new Label(" "));ressources.add(new Label(" "));
-		employe.addActionListener(new EmployesListener());
 		
 		this.add(demarrage,BorderLayout.CENTER);
 		
