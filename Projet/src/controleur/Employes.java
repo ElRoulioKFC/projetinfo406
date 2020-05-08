@@ -1,4 +1,4 @@
-package frameGestion;
+package controleur;
 
 public class Employes {
 	private int idE;

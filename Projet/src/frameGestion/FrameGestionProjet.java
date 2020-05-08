@@ -3,6 +3,8 @@ package frameGestion;
 import java.awt.*;
 import javax.swing.*;
 
+import controleur.ListeProjet;
+
 public class FrameGestionProjet extends JFrame {
 	private ListeProjet lp;
 	final static int HAUTEUR = 600;

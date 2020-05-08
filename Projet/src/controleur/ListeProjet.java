@@ -1,4 +1,4 @@
-package frameGestion;
+package controleur;
 
 import java.util.*;
 

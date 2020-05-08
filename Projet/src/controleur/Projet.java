@@ -1,4 +1,4 @@
-package frameGestion;
+package controleur;
 
 public class Projet {
 	private int idP;

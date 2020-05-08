@@ -2,6 +2,7 @@ package frameGestion;
 
 import java.awt.*;
 import javax.swing.*;
+import controleur.*;
 
 import FramePrincipale.FramePrincipale;
 
@@ -17,6 +18,7 @@ public class FrameGestionEmployes extends JFrame {
 		this.setSize(LARGEUR,HAUTEUR);
 		JButton ajouter = new JButton("Ajouter un Employé");
 		JButton supprimer = new JButton("Supprimer un Employé");
+		ajouter.addActionListener(new AjoutEmployesListener());
 		bas.add(ajouter);
 		bas.add(supprimer);
 		this.add(gauche,BorderLayout.WEST);
