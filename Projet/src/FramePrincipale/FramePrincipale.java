@@ -6,8 +6,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import controleur.*;
-import frameGestion.*;
-import frameGestion.FrameGestion.RessourcesListener;
+
 
 
 public class FramePrincipale extends JFrame {
