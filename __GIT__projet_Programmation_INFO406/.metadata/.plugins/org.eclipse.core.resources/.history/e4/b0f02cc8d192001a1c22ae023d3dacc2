@@ -1,0 +1,12 @@
+package gestion;
+
+import javax.swing.JPanel;
+
+public class PanelGestion {
+
+	public JPanel PanelGest() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

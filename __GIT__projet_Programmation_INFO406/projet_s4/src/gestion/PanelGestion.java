@@ -49,7 +49,7 @@ public class PanelGestion {
 		accueil.add(new Label(" "));
 		
 		projet.addActionListener(new ProjetListener());
-		ressource.addActionListener(new RessourcesListener());
+//		ressource.addActionListener(new RessourcesListener());
 		
 		ressources.add(new Label(" "));
 		ressources.add(new Label(" "));
@@ -84,14 +84,14 @@ public class PanelGestion {
 	
 
 	
-	public class RessourcesListener implements ActionListener{
-		@Override
-		public void actionPerformed(ActionEvent arg0) {
-			FramePrincipale.ressources(this.ressources);
-			
-		}
-		
-	}
+//	public class RessourcesListener implements ActionListener{
+//		@Override
+//		public void actionPerformed(ActionEvent arg0) {
+//			FramePrincipale.ressources(this.ressources);
+//			
+//		}
+//		
+//	}
 
 
 }
