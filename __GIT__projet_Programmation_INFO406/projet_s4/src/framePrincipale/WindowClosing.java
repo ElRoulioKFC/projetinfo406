@@ -1,4 +1,4 @@
-package edt;
+package framePrincipale;
 
 import java.awt.Window;
 import java.awt.event.*;

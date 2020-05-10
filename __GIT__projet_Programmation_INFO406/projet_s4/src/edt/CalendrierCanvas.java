@@ -5,6 +5,10 @@ import java.util.*;
 
 public class CalendrierCanvas extends Canvas {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public Date date;
 	
 	

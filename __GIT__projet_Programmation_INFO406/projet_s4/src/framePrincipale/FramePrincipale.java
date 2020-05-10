@@ -1,4 +1,4 @@
-package edt;
+package framePrincipale;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -6,22 +6,28 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-
 public class FramePrincipale extends JFrame {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	final static int HAUTEUR = 600;
 	final static int LARGEUR = 1000;
-	 JPanel Gestion=new JPanel();
+	
 	 JPanel PP= new JPanel(new GridLayout(3,5));
-	 PanelEDT PEDT = new PanelEDT();
+	 
+	 edt.PanelEDT PEDT = new edt.PanelEDT();
+	 gestion.PanelGestion PGest = new gestion.PanelGestion();
+	 
 	 JPanel EDT= new JPanel();
+	 JPanel Gest = new JPanel();
+	 
 	 JButton EspaceEDT = new JButton ("EDT");
 	 JButton EspaceGestion = new JButton ("Gestion des Ressources");
+	 
 	 JButton Home = new JButton ("Home");
-	JMenuBar mb = new JMenuBar();
+	 JMenuBar mb = new JMenuBar();
 
 	public FramePrincipale () {
 
@@ -65,7 +71,7 @@ public class FramePrincipale extends JFrame {
 		this.EspaceEDT.addActionListener(new AccederEDT());
 
 		EDT=PEDT.PanelEDT();
-		this.Gestion.add(new Label ("Bienvenu dans l'Espace Gestion !"));
+		Gest=PGest.PanelGest();
 
 
 		this.addWindowListener(new WindowClosing(this));
@@ -87,7 +93,7 @@ public class FramePrincipale extends JFrame {
 	}
 	//fonction pour passer sur le Panel de la Page Gestion
 	public void PanelGestion() {
-		this.setContentPane(this.Gestion);
+		this.setContentPane(this.Gest);
 		this.revalidate();
 
 	}
@@ -121,6 +127,11 @@ public class FramePrincipale extends JFrame {
 		public void actionPerformed (ActionEvent e) {
 			FramePrincipale.this.PanelEDT();
 		}
+	}
+	
+	public  void ressources(JPanel ress) {
+		this.setContentPane(ress);
+		this.revalidate();
 	}
 
 
