@@ -1,6 +1,7 @@
 package frameGestion;
-import FramePrincipale.FramePrincipale;
 import java.awt.*;
+
+import framePrincipale.FramePrincipale;
 
 public class SubFrameAjEmployes extends Frame {
 	public SubFrameAjEmployes() {

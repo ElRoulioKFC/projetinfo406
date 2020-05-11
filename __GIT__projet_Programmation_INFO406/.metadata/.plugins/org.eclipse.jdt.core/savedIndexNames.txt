@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+C:\Users\joris\OneDrive\Documents\GitHub\projetinfo406\__GIT__projet_Programmation_INFO406\.metadata\.plugins\org.eclipse.jdt.core
-2100048707.index
-1671692264.index

@@ -3,8 +3,7 @@ package frameGestion;
 import java.awt.*;
 import javax.swing.*;
 import controleur.*;
-
-import FramePrincipale.FramePrincipale;
+import framePrincipale.FramePrincipale;
 
 public class FrameGestionEmployes extends JFrame {
 	private ListeEmployes le;
