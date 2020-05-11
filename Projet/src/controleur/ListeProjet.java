@@ -26,7 +26,7 @@ public class ListeProjet {
 	
 	
 	public static void main(String[] args) {
-		Employes chef = new Employes(1,"Brivet","Alexis",1000);
+		Employes chef = new Employes(1,"Brivet","Alexis","Informaticien",1000);
 		Projet projet1 = new Projet(1,"Projet 1",0,chef);
 		Projet projet2 = new Projet(2,"Projet 2",0,chef);
 		Projet projet3 = new Projet(3,"Projet 3",0,chef);
