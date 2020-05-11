@@ -22,11 +22,11 @@ public class ListeEmployes {
 		return res;
 	}
 	public static void main(String[] args) {
-		Employes emp1 = new Employes(1,"Brivet","Alexis","Informaticien",1000);
+		Employes emp1 = new Employes(1,"Brivet","Alexis",1000);
 		ListeEmployes liste = new ListeEmployes();
 		liste.ajouter(emp1);
-		liste.ajouter(new Employes(1,"Brivet","Jules","Ingénieur",1000));
-		liste.ajouter(new Employes(1,"Real","Sandrine","Architecte",4000));
+		liste.ajouter(new Employes(1,"Brivet","Jules",1000));
+		liste.ajouter(new Employes(1,"Real","Sandrine",4000));
 		System.out.println(liste);
 		liste.supprimer(emp1);
 		System.out.println(liste);
