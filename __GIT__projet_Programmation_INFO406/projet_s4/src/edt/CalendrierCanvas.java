@@ -32,7 +32,6 @@ public class CalendrierCanvas extends Canvas {
 	@SuppressWarnings("deprecation")
 	private void dessin_cases_calendrier(Date date, int nb_jour, Graphics g) {
 		int largeur=this.getWidth();
-		System.out.print(largeur);
 		int hauteur=this.getHeight();
 		int numéro_semaine=0;
 		for (int i=1;i<=nb_jour;i++) {
