@@ -1,0 +1,18 @@
+package frameGestion;
+import java.awt.*;
+
+import framePrincipale.FramePrincipale;
+
+public class SubFrameAjEmployes extends Frame {
+	public SubFrameAjEmployes() {
+		Dialog d = new Dialog(this,"Données",false);
+		d.setSize(200,300);
+		d.setLayout(new FlowLayout());
+		d.add(new Label("Nom : "));
+		d.add(new TextField(10));
+		d.add(new Label("Prénom : "));
+		d.add(new TextField(10));
+		d.setVisible(true);
+	}
+
+}
