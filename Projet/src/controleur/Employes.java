@@ -1,5 +1,6 @@
 package controleur;
 
+
 public class Employes {
 	private int idE;
 	private String nomE;
