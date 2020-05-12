@@ -6,15 +6,15 @@ import java.awt.event.ActionListener;
 
 import frameGestion.*;
 
-public class SalleListener implements ActionListener {
-	private FrameGestionSalle fgs;
+public class ProjetListener implements ActionListener  {
+	private FrameGestionProjet fgp;
 	
-	public SalleListener() {
+	public ProjetListener() {
 		
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		this.fgs = new FrameGestionSalle();
+		this.fgp = new FrameGestionProjet();
 	}
 }
