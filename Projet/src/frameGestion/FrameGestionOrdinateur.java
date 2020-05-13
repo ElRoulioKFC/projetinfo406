@@ -4,6 +4,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import framePrincipale.FramePrincipale;
+
 public class FrameGestionOrdinateur extends JFrame {
 
 	final static int HAUTEUR = 600;
@@ -45,5 +47,10 @@ public class FrameGestionOrdinateur extends JFrame {
 		this.setVisible(true) ;
 		
 	}
+	public static void main (String [] args){
+		new FrameGestionOrdinateur ();
+
+	}
+
 	
 }
