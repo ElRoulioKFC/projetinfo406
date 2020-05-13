@@ -26,18 +26,17 @@ public class ListeProjet {
 	}
 	
 	
-	public static void main(String[] args) {
-		Employes chef = new Employes(1,"Brivet","Alexis",1000);
-		Projet projet1 = new Projet(1,"Projet 1",0,chef);
-		Projet projet2 = new Projet(2,"Projet 2",0,chef);
-		Projet projet3 = new Projet(3,"Projet 3",0,chef);
-		ListeProjet liste = new ListeProjet();
-		liste.ajouter(projet1);
-		liste.ajouter(projet2);
-		liste.ajouter(projet3);
-		System.out.println(liste);
-		liste.supprimer(projet2);
-		System.out.println(liste);
-		
-	}
+	//public static void main(String[] args) {
+		//Employes chef = new Employes(1,"Brivet","Alexis",1000);
+		//Projet projet1 = new Projet(1,"Projet 1",0,chef);
+		//Projet projet2 = new Projet(2,"Projet 2",0,chef);
+		//Projet projet3 = new Projet(3,"Projet 3",0,chef);
+		//ListeProjet liste = new ListeProjet();
+		//liste.ajouter(projet1);
+		//liste.ajouter(projet2);
+		//liste.ajouter(projet3);
+		//System.out.println(liste);
+		//liste.supprimer(projet2);
+		//System.out.println(liste);	
+	//}
 }
