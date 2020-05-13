@@ -1,16 +1,23 @@
 package controleur;
 
+import java.sql.Date;
 
 public class Projet {
 	private int idP;
 	private String nomP;
-	private int nbheureP;
+	private String nomClient;
+	private double nbheureP;
+	private double nbheure_actP;
+	private Date datetime;
 	private Employes chefDeProjet;
 	
-	public Projet(int id, String nom, int nb, Employes chef) {
+	public Projet(int id, String nom,String client, double nbH,Date datelimite, Employes chef) {
 		this.idP = id;
 		this.nomP = nom;
-		this.nbheureP = nb;
+		this.nomClient = client;
+		this.nbheure_actP = 0;
+		this.nbheureP = nbH;
+		this.datetime = datelimite;
 		this.chefDeProjet = chef;
 	}
 	public String getNom() {
