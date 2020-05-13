@@ -29,11 +29,11 @@ public class FrameGestionOrdinateur extends JFrame {
 		
 		Object[] elements3 = new Object[] {"ordinateur","date d'achat" , "puissance de calcul"} ;
 		JComboBox ordinateur = new JComboBox (elements3) ;
-		ordinateur.setBounds(10,10,200,50); 
+	/*	ordinateur.setBounds(10,10,200,50); */
 		liste.add(ordinateur) ;
 		JLabel label3 = new JLabel(" ") ;
 		liste.add(label3) ;
-		label3.setBounds(10,100,300,50); 
+	/*	label3.setBounds(10,100,300,50); */
 		ordinateur.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				e.getSource();
@@ -47,6 +47,7 @@ public class FrameGestionOrdinateur extends JFrame {
 		this.setVisible(true) ;
 		
 	}
+	
 	public static void main (String [] args){
 		new FrameGestionOrdinateur ();
 
