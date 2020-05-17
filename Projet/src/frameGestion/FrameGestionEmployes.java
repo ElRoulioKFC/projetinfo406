@@ -1,6 +1,10 @@
 package frameGestion;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 import javax.swing.*;
 
 import controleur.*;
@@ -12,19 +16,21 @@ public class FrameGestionEmployes extends JFrame {
 	final static int LARGEUR = 1000;
 	JPanel gauche = new JPanel(new BorderLayout());
 	JPanel bas = new JPanel(new GridLayout(1,2));
+	public static ListeEmployes liste; // Rajouter la commende Mysql pour récupérer la liste des employés.
 	
 	public FrameGestionEmployes() {
 		this.setTitle("Gestion des Employes");
 		this.setSize(LARGEUR,HAUTEUR);
 		JButton ajouter = new JButton("Ajouter un Employé");
 		JButton supprimer = new JButton("Supprimer un Employé");
-		ajouter.addActionListener(new AjoutEmployesListener());
+		ajouter.addActionListener(new FraAjEmployesListener());
 		bas.add(ajouter);
 		bas.add(supprimer);
 		this.add(gauche,BorderLayout.WEST);
 		gauche.add(bas,BorderLayout.SOUTH);
 
 		this.setVisible(true);
-	}
 
+		
+	}
 }

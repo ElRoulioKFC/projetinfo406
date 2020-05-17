@@ -21,6 +21,15 @@ public class Employes {
 		this.metier = metier;
 		this.mail = mail;
 	}
+	public Employes(String nom, String prenom ,String metier, String mail, double nb_heure ,int salaire) {
+		this.nomE = nom;
+		this.prenomE = prenom;
+		this.salaireE = salaire;
+		this.nb_heur_sem =nb_heure;
+		this.nb_heur_act = 0;
+		this.metier = metier;
+		this.mail = mail;
+	}
 	public Employes(int id, String nom, String prenom, int salaire, double nb_heure,String metier, String mail,Employes sup) {
 		this.idE = id;
 		this.nomE = nom;
@@ -45,6 +54,9 @@ public class Employes {
 	public void travaille(double heure) {
 		this.nb_heur_sem = this.nb_heur_sem - heure;
 		
+	}
+	public int getId() {
+		return this.idE;
 	}
 
 }
