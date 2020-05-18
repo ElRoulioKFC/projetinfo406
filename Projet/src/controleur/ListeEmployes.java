@@ -4,7 +4,7 @@ package controleur;
 import java.util.*;
 
 public class ListeEmployes {
-	private ArrayList<Employes> listeEmployes;
+	public ArrayList<Employes> listeEmployes;
 	
 	public ListeEmployes() {
 		this.listeEmployes = new ArrayList<Employes>();
@@ -23,14 +23,19 @@ public class ListeEmployes {
 		return res;
 	}
 	public int recupLasteID() {
-		int i = this.taille() - 1;
-		return this.listeEmployes.get(i).getId();
+		if (this.listeEmployes == null) {
+			return 0;
+		}else {
+			int i = this.taille() -1;
+			return this.listeEmployes.get(i).getId();
+		}
+
 	}
 	private int taille() {
 		return this.listeEmployes.size();
 	}
 	//public static void main(String[] args) {
-		//Employes emp1 = new Employes(1,"Brivet","Alexis",1000);
+		//Employes emp1 = new Employes(1,"Brivet","Alexis",1000, 35, "informaticiens", "alexis.brivet@onsenfou.fr");
 		//ListeEmployes liste = new ListeEmployes();
 		//liste.ajouter(emp1);
 		//liste.ajouter(new Employes(1,"Brivet","Jules",1000));

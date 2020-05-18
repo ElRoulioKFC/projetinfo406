@@ -5,15 +5,16 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 import controleur.Employes;
+import controleur.ListeEmployes;
 import frameGestion.FrameGestionEmployes;
 
 public class SubFrameAjEmployes extends Frame {
-	JTextField nom = new JTextField("");
-	JTextField prenom = new JTextField("");
-	JTextField metier = new JTextField("");
+	JTextField nom = new JTextField("",15);
+	JTextField prenom = new JTextField("",15);
+	JTextField metier = new JTextField("",15);
 	JTextField mail = new JTextField("",15);
-	JTextField nbh = new JTextField("");
-	JTextField salaire = new JTextField("");
+	JTextField nbh = new JTextField("0",15);
+	JTextField salaire = new JTextField("0",15);
 	JDialog d = new JDialog(this,"Information de l'Employé",false);
 	public SubFrameAjEmployes() {
 		JButton ajouter = new JButton ("Ajouter");
@@ -49,25 +50,21 @@ public class SubFrameAjEmployes extends Frame {
 		
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
+			ListeEmployes listeloc = new ListeEmployes();// = FrameGestionEmployes.liste;
 			String nomE = nom.getText();
 			String prenomE = prenom.getText();
 			String metierE = metier.getText();
 			String mailE = mail.getText();
 			double nbhE;
 			int salaireE;
-			if (nbh.getText() == "" ) {
-				nbhE = 0;
-			}else {
 			nbhE = Double.parseDouble(nbh.getText());
-			}
-			if (salaire.getText() == "" ) {
-				salaireE = 0;
-			}else {
-				salaireE = Integer.parseInt(salaire.getText());
-			}
+			salaireE = Integer.parseInt(salaire.getText());
 			Employes emp = new Employes(nomE,prenomE,metierE,mailE,nbhE,salaireE);
-			FrameGestionEmployes.liste.ajouter(emp);
-			
+			emp.setId(1);
+			//System.out.println(FrameGestionEmployes.liste);
+			listeloc.ajouter(emp);
+			//FrameGestionEmployes.liste = listeloc;
+			System.out.println(listeloc);
 			d.setVisible(false);
 		}
 	}

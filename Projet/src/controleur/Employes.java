@@ -13,6 +13,7 @@ public class Employes {
 	private String mail;
 	public Employes(int id, String nom, String prenom, int salaire, double nb_heure,String metier, String mail) {
 		this.idE = id;
+		this.idSup = null;
 		this.nomE = nom;
 		this.prenomE = prenom;
 		this.salaireE = salaire;
@@ -22,6 +23,7 @@ public class Employes {
 		this.mail = mail;
 	}
 	public Employes(String nom, String prenom ,String metier, String mail, double nb_heure ,int salaire) {
+		this.idSup = null;
 		this.nomE = nom;
 		this.prenomE = prenom;
 		this.salaireE = salaire;
@@ -43,6 +45,12 @@ public class Employes {
 	}
 	public String getNom() {
 		return this.nomE;
+	}
+	public void setId(int id) {
+		this.idE = id ;
+	}
+	public void setIdSup(Employes id) {
+		this.idSup = id;
 	}
 	public String getPrenom() {
 		return this.prenomE;

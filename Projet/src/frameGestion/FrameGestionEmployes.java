@@ -16,7 +16,6 @@ public class FrameGestionEmployes extends JFrame {
 	final static int LARGEUR = 1000;
 	JPanel gauche = new JPanel(new BorderLayout());
 	JPanel bas = new JPanel(new GridLayout(1,2));
-	public static ListeEmployes liste; // Rajouter la commende Mysql pour récupérer la liste des employés.
 	
 	public FrameGestionEmployes() {
 		this.setTitle("Gestion des Employes");
