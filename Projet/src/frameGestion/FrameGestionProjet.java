@@ -10,6 +10,8 @@ public class FrameGestionProjet extends JFrame {
 	private ListeProjet lp;
 	final static int HAUTEUR = 600;
 	final static int LARGEUR = 1000;
+	private CanvasEmployés canvas = new CanvasEmployés() ;
+	
 	JPanel gauche = new JPanel(new BorderLayout());
 	JPanel bas = new JPanel(new GridLayout(1,2));
 	
@@ -24,7 +26,12 @@ public class FrameGestionProjet extends JFrame {
 		this.add(gauche,BorderLayout.WEST);
 		gauche.add(bas,BorderLayout.SOUTH);
 		
+		this.add(canvas) ;
+		
 		this.setVisible(true);
+	}
+	public static void main (String args[]) {
+		new FrameGestionSalle() ;
 	}
 
 }

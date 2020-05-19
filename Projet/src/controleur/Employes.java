@@ -1,5 +1,6 @@
 package controleur;
 
+import java.awt.event.ActionListener;
 
 public class Employes {
 	private int idE;
@@ -70,14 +71,38 @@ public class Employes {
 	public String getPrenom() {
 		return this.prenomE;
 	}
-	public String toString() {
-		return "Nom: "+this.nomE+" Prenom: "+this.prenomE;
+	public int getSalaire() {
+		return this.salaireE ;
 	}
+	public double getNbheure() {
+		return this.nb_heur_sem ;
+	}
+	public String getMetier() {
+		return this.metier ;
+	}
+	public String getMail() {
+		return this.mail ;
+	}
+	
+	public String toString() {
+		return ("<html> Nom: " + this.nomE + "<br> Prenom: " + this.prenomE + 
+				                             "<br> Salaire: " + this.salaireE + " Euros" +
+				                             "<br> Nombre d'heures par semaine: " + this.nb_heur_sem + " Heures" +
+				                             "<br> Métier: " + this.metier +
+				                             "<br> Adresse mail: " + this.mail +
+				" </html>") ;
+				
+				/* + "\nSalaire: " + this.salaireE+
+				"\nNombre d'heures par semaine: "+this.nb_heur_sem + "\nMétier: "+ this.metier+
+				"\nAdresse mail: "+ this.mail ;*/
+	}
+	
 	// Travaille est une méthode qui permet de retirer les heures qu'un employé a travailler de ce qui lui reste pour la semaine
 	public void travaille(double heure) {
 		this.nb_heur_sem = this.nb_heur_sem - heure;
 		
 	}
+
 	public int getId() {
 		return this.idE;
 	}
@@ -85,5 +110,3 @@ public class Employes {
 	public boolean estEmpNull() {
 		return (this.idE == -1);
 	}
-
-}
