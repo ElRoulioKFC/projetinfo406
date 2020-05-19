@@ -110,3 +110,4 @@ public class Employes {
 	public boolean estEmpNull() {
 		return (this.idE == -1);
 	}
+}

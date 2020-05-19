@@ -75,7 +75,7 @@ public class FrameGestionEmployes extends JFrame {
 		gauche.add(bas,BorderLayout.SOUTH);
 
 		this.setVisible(true);
-}
+
 		
 		
 		
