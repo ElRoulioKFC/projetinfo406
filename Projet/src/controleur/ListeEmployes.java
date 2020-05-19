@@ -22,6 +22,7 @@ public class ListeEmployes {
 		}
 		return res;
 	}
+	
 	public int recupLasteID() {
 		if (this.listeEmployes == null) {
 			return 0;
@@ -31,6 +32,7 @@ public class ListeEmployes {
 		}
 
 	}
+	
 	private int taille() {
 		return this.listeEmployes.size();
 	}
@@ -38,28 +40,32 @@ public class ListeEmployes {
 	public Employes recupEmpByNom(String nom) {
 		int i = 0;
 		Employes emp = new Employes();
+		emp.EmpNull();
 		boolean trouve = false;
-		while (trouve == false && i < this.taille()) {
+		while (trouve == false && i != this.taille()) {
 			if (this.listeEmployes.get(i).getNom() == nom) {
 				trouve = true;
 				emp = this.listeEmployes.get(i);
 			}
+			i++;
 		}
-		
 		return emp;
 	}
-	public static void main(String[] args) {
-		Employes emp1 = new Employes(1,"Brivet","Alexis",1000, 35, "informaticiens", "alexis.brivet@onsenfou.fr");
-		Employes null1 = new Employes();
-		System.out.println(emp1.estEmpNull());
-		System.out.println(null1.estEmpNull());
+	
+	//public static void main(String[] args) {
+		//Employes emp1 = new Employes(1,"Brivet","Alexis",1000, 35, "informaticiens", "alexis.brivet@onsenfou.fr");
+		//Employes null1 = new Employes();
+		//System.out.println(null1);
+		//System.out.println(emp1.estEmpNull());
+		//System.out.println(null1.estEmpNull());
 		//ListeEmployes liste = new ListeEmployes();
 		//liste.ajouter(emp1);
+		//System.out.println(liste.recupEmpByNom("Rezader").estEmpNull());
 		//liste.ajouter(new Employes(1,"Brivet","Jules",1000));
 		//liste.ajouter(new Employes(1,"Real","Sandrine",4000));
 		//System.out.println(liste);
 		//liste.supprimer(emp1);
 		//System.out.println(liste);
-	}
+	//}
 
 }

@@ -20,8 +20,6 @@ public class SubFrameAjEmployes extends Frame {
 		JButton ajouter = new JButton ("Ajouter");
 		d.setSize(450,200);
 		d.setLayout(new FlowLayout());
-		//Label inf = new Label("Attention A bien remplire toutes les cases pour ajouter un employés");
-		//d.add(inf,BorderLayout.NORTH);
 		JPanel p = new JPanel();
 		p.setLayout(new GridLayout(6,2));
 		p.add(new Label("Nom : "));
@@ -39,7 +37,6 @@ public class SubFrameAjEmployes extends Frame {
 		d.add(p,BorderLayout.CENTER);
 		ajouter.addActionListener(new AjoutEmp());
 		d.add(ajouter,BorderLayout.SOUTH);
-		//this.addWindowListener(new WindowClosing(this));
 		d.setVisible(true);
 	}
 	public class AjoutEmp implements ActionListener{
@@ -50,7 +47,7 @@ public class SubFrameAjEmployes extends Frame {
 		
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			ListeEmployes listeloc = new ListeEmployes();// = FrameGestionEmployes.liste;
+			ListeEmployes liste = new ListeEmployes();//Ajouter la base de donnée
 			String nomE = nom.getText();
 			String prenomE = prenom.getText();
 			String metierE = metier.getText();
@@ -61,10 +58,8 @@ public class SubFrameAjEmployes extends Frame {
 			salaireE = Integer.parseInt(salaire.getText());
 			Employes emp = new Employes(nomE,prenomE,metierE,mailE,nbhE,salaireE);
 			emp.setId(1);
-			//System.out.println(FrameGestionEmployes.liste);
-			listeloc.ajouter(emp);
-			//FrameGestionEmployes.liste = listeloc;
-			System.out.println(listeloc);
+			liste.ajouter(emp);//Ajouter la base de donnée
+			System.out.println(liste);
 			d.setVisible(false);
 		}
 	}

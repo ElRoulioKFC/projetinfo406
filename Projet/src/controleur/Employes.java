@@ -11,7 +11,6 @@ public class Employes {
 	private double nb_heur_act;
 	private String metier;
 	private String mail;
-	Employes empnull = new Employes(-1,"","",0,0,"","");
 	public Employes(int id, String nom, String prenom, int salaire, double nb_heure,String metier, String mail) {
 		this.idE = id;
 		this.idSup = null;
@@ -44,6 +43,21 @@ public class Employes {
 		this.mail = mail;
 		this.idSup = sup;
 	}
+	public Employes() {
+		this.idE = -1;
+		this.idSup = null;
+		this.nomE = "";
+		this.prenomE = "";
+		this.salaireE = 0;
+		this.nb_heur_sem = 0;
+		this.nb_heur_act = 0;
+		this.metier = "";
+		this.mail = "";
+	}
+	public Employes EmpNull(){
+		return new Employes();
+		
+	}
 	public String getNom() {
 		return this.nomE;
 	}
@@ -68,19 +82,8 @@ public class Employes {
 		return this.idE;
 	}
 	
-	public Employes() {
-		this.idE = -1;
-		this.idSup = null;
-		this.nomE = "";
-		this.prenomE = "";
-		this.salaireE = 0;
-		this.nb_heur_sem = 0;
-		this.nb_heur_act = 0;
-		this.metier = "";
-		this.mail = "";
-	}
 	public boolean estEmpNull() {
-		return (this == empnull);
+		return (this.idE == -1);
 	}
 
 }

@@ -20,6 +20,17 @@ public class Projet {
 		this.datetime = datelimite;
 		this.chefDeProjet = chef;
 	}
+	public Projet(String nom,String client, double nbH,Date datelimite, Employes chef) {
+		this.nomP = nom;
+		this.nomClient = client;
+		this.nbheure_actP = 0;
+		this.nbheureP = nbH;
+		this.datetime = datelimite;
+		this.chefDeProjet = chef;
+	}
+	public void setId(int id) {
+		this.idP = id;
+	}
 	public String getNom() {
 		return this.nomP;
 	}

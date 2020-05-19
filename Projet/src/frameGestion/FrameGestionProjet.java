@@ -3,6 +3,7 @@ package frameGestion;
 import java.awt.*;
 import javax.swing.*;
 
+import controleur.FraAjProjetsListener;
 import controleur.ListeProjet;
 
 public class FrameGestionProjet extends JFrame {
@@ -17,6 +18,7 @@ public class FrameGestionProjet extends JFrame {
 		this.setSize(LARGEUR,HAUTEUR);
 		JButton ajouter = new JButton("Ajouter un Projet");
 		JButton supprimer = new JButton("Supprimer un Projet");
+		ajouter.addActionListener(new FraAjProjetsListener());
 		bas.add(ajouter);
 		bas.add(supprimer);
 		this.add(gauche,BorderLayout.WEST);
