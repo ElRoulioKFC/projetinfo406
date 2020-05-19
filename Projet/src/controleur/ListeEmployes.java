@@ -34,8 +34,25 @@ public class ListeEmployes {
 	private int taille() {
 		return this.listeEmployes.size();
 	}
-	//public static void main(String[] args) {
-		//Employes emp1 = new Employes(1,"Brivet","Alexis",1000, 35, "informaticiens", "alexis.brivet@onsenfou.fr");
+	
+	public Employes recupEmpByNom(String nom) {
+		int i = 0;
+		Employes emp = new Employes();
+		boolean trouve = false;
+		while (trouve == false && i < this.taille()) {
+			if (this.listeEmployes.get(i).getNom() == nom) {
+				trouve = true;
+				emp = this.listeEmployes.get(i);
+			}
+		}
+		
+		return emp;
+	}
+	public static void main(String[] args) {
+		Employes emp1 = new Employes(1,"Brivet","Alexis",1000, 35, "informaticiens", "alexis.brivet@onsenfou.fr");
+		Employes null1 = new Employes();
+		System.out.println(emp1.estEmpNull());
+		System.out.println(null1.estEmpNull());
 		//ListeEmployes liste = new ListeEmployes();
 		//liste.ajouter(emp1);
 		//liste.ajouter(new Employes(1,"Brivet","Jules",1000));
@@ -43,6 +60,6 @@ public class ListeEmployes {
 		//System.out.println(liste);
 		//liste.supprimer(emp1);
 		//System.out.println(liste);
-	//}
+	}
 
 }
