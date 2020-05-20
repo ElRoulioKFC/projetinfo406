@@ -8,7 +8,7 @@ import controleur.Employe;
 import controleur.ListeEmploye;
 
 
-public class SubFrameAjEmployes extends Frame {
+public class SubFrameAjEmploye extends Frame {
 	JTextField nom = new JTextField("",15);
 	JTextField prenom = new JTextField("",15);
 	JTextField metier = new JTextField("",15);
@@ -16,7 +16,7 @@ public class SubFrameAjEmployes extends Frame {
 	JTextField nbh = new JTextField("0",15);
 	JTextField salaire = new JTextField("0",15);
 	JDialog d = new JDialog(this,"Information de l'Employé",false);
-	public SubFrameAjEmployes() {
+	public SubFrameAjEmploye() {
 		JButton ajouter = new JButton ("Ajouter");
 		d.setSize(450,200);
 		d.setLayout(new FlowLayout());

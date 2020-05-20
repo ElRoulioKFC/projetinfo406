@@ -14,6 +14,6 @@ public class EmployeListener implements ActionListener  {
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		new FrameGestionEmployes();
+		new FrameGestionEmploye();
 	}
 }

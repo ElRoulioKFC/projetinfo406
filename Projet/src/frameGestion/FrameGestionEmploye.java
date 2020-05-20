@@ -10,7 +10,7 @@ import javax.swing.*;
 import controleur.*;
 import framePrincipale.FramePrincipale;
 
-public class FrameGestionEmployes extends JFrame {
+public class FrameGestionEmploye extends JFrame {
 	final static int HAUTEUR = 600;
 	final static int LARGEUR = 1000;
 	
@@ -66,7 +66,7 @@ public class FrameGestionEmployes extends JFrame {
 
 	
    
-	public FrameGestionEmployes() {
+	public FrameGestionEmploye() {
 		
 	/*	monimage = new ImageIcon("/Téléchargements/"+"background.jpg") ;
 		this.add(monimage) ; */

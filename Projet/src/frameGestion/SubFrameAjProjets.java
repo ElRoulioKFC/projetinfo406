@@ -8,7 +8,7 @@ import java.sql.Date;
 import javax.swing.*;
 
 import controleur.*;
-import frameGestion.SubFrameAjEmployes.AjoutEmp;
+import frameGestion.SubFrameAjEmploye.AjoutEmp;
 
 public class SubFrameAjProjets extends Frame{
 	JTextField nom = new JTextField("",15);
@@ -22,7 +22,7 @@ public class SubFrameAjProjets extends Frame{
 		d.setSize(450,200);
 		d.setLayout(new FlowLayout());
 		JPanel p = new JPanel();
-		p.setLayout(new GridLayout(6,2));
+		p.setLayout(new GridLayout(5,2));
 		p.add(new Label("Nom Projet : "));
 		p.add(nom);
 		p.add(new Label("Nom Client : "));

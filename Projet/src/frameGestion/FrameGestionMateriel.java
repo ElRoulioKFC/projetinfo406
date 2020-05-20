@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import controleur.FraAjMaterielListener;
 import framePrincipale.FramePrincipale;
 
 public class FrameGestionMateriel extends JFrame {
@@ -22,6 +23,7 @@ public class FrameGestionMateriel extends JFrame {
 
 		JButton ajouter = new JButton("Ajouter un Ordinateur");
 		JButton supprimer = new JButton("Supprimer un Ordinateur");
+		ajouter.addActionListener(new FraAjMaterielListener());
 		bas.add(ajouter);
 		bas.add(supprimer);
 		this.add(gauche,BorderLayout.WEST);

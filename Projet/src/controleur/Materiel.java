@@ -12,6 +12,11 @@ public class Materiel {
 		this.typeM = type;
 		this.localisationM = localisation;
 	}
+	public Materiel( String nom, String type, Salle localisation) {
+		this.nomM = nom;
+		this.typeM = type;
+		this.localisationM = localisation;
+	}
 	
 	public int getid() {
 		return this.idM;
