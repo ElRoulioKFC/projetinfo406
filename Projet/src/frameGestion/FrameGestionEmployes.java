@@ -26,12 +26,20 @@ public class FrameGestionEmployes extends JFrame {
 	Employe employe6 = new Employe(6,"Maulet","Morgane",8000,45,"Prof de maths","mauletmorgane@gmail.com") ;
 	Employe employe7 = new Employe(7,"Kenny","Davila",5000,45,"Data Ingeneer","geyerjules@gmail.com") ;
 	Employe employe8 = new Employe(8,"Plassass","Alexia",8000,45,"Data Scientist","alexiaplassass@gmail.com") ;
+	Employe employe9 = new Employe(9,"Kemegni","Clarisse",7850,40,"Data Scientist","clarisse@gmail.com" ) ; 
+	Employe employe10 = new Employe(10,"Megno","Irène",5000,45,"Comptable","ivikemson@gmail.com") ;
+	Employe employe11 = new Employe(11,"Toya","Steve Frank",5000,45,"Data Ingeneer","toyasteve@gmail.com") ;
+	Employe employe12 = new Employe(12,"Tchoule","vadaise",5000,45,"Developpeur web","vadaise@gmail.com") ;
+	Employe employe13 = new Employe(13,"Makussu","Elisabete",5000,45,"Fiscaliste","elisabetemakussu@gmail.com") ;
+	Employe employe14 =  new Employe(14,"Biwele","Dorette",8000,45,"Chef de projet web technique","dorette@gmail.com") ;
+	Employe employe15 = new Employe(15,"Ouakam","scarlène",5000,45,"Data Ingeneer","scarlène@gmail.com") ;
+	Employe employe16 = new Employe(16,"Nde","Darielle",8000,45,"Ingenieur Mécatronicienne","ndedarielle@gmail.com") ;
 	
 	JPanel gauche = new JPanel(new BorderLayout());
 	JPanel bas = new JPanel(new GridLayout(1,2));
 	
-	JButton plushaut = new JButton ("haut") ;
-	JButton plusbas = new JButton("bas") ;
+	JButton plushaut = new JButton ("UP") ;
+	JButton plusbas = new JButton("DOWN") ;
 	
 	JPanel hautdroite = new JPanel(new BorderLayout()) ;
 	JPanel basdroite = new JPanel(new BorderLayout()) ;
@@ -46,6 +54,15 @@ public class FrameGestionEmployes extends JFrame {
 	JButton bouton6 = new JButton(employe6.getNom() + " " + employe6.getPrenom()) ;
 	JButton bouton7 = new JButton(employe7.getNom() + " " + employe7.getPrenom()) ;
 	JButton bouton8 = new JButton(employe8.getNom() + " " + employe8.getPrenom()) ;
+
+	JButton bouton9 = new JButton(employe9.getNom() + " " + employe9.getPrenom()) ;
+	JButton bouton10 = new JButton(employe10.getNom() + " " + employe10.getPrenom()) ;
+	JButton bouton11 = new JButton(employe11.getNom() + " " + employe11.getPrenom()) ;
+	JButton bouton12 = new JButton(employe12.getNom() + " " + employe12.getPrenom()) ;
+	JButton bouton13 = new JButton(employe13.getNom() + " " + employe13.getPrenom()) ;
+	JButton bouton14 = new JButton(employe14.getNom() + " " + employe14.getPrenom()) ;
+	JButton bouton15 = new JButton(employe15.getNom() + " " + employe15.getPrenom()) ;
+	JButton bouton16 = new JButton(employe16.getNom() + " " + employe16.getPrenom()) ;
 
 	
    
@@ -73,11 +90,6 @@ public class FrameGestionEmployes extends JFrame {
 		bas.add(supprimer);
 		this.add(gauche,BorderLayout.WEST);
 		gauche.add(bas,BorderLayout.SOUTH);
-
-		this.setVisible(true);
-
-		
-		
 		
 		hautdroite.add(plushaut , BorderLayout.EAST) ;
 		basdroite.add(plusbas , BorderLayout.EAST) ;
@@ -178,10 +190,12 @@ public class FrameGestionEmployes extends JFrame {
 			}
 		});
 	  
-	  
-	 
 	    this.setVisible(true) ;
 		
+	}
+	
+	public static void main (String[]args) {
+		new FrameGestionEmployes() ;
 	}
 	
 }
