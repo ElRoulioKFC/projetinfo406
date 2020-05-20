@@ -3,6 +3,8 @@ package frameGestion;
 import java.awt.*;
 import javax.swing.*;
 
+import controleur.FraAjSalleListener;
+
 
 public class FrameGestionSalle extends JFrame{
 	//private ListeProjet lp;
@@ -18,6 +20,7 @@ public class FrameGestionSalle extends JFrame{
 		this.setSize(LARGEUR,HAUTEUR);
 		JButton ajouter = new JButton("Ajouter une Salle");
 		JButton supprimer = new JButton("Supprimer une Salle");
+		ajouter.addActionListener(new FraAjSalleListener());
 		bas.add(ajouter);
 		bas.add(supprimer);
 		this.add(gauche,BorderLayout.WEST);

@@ -1,19 +1,19 @@
 package framePrincipale;
 
 import java.awt.Window;
-import frameGestion.SubFrameAjEmployes;
+import frameGestion.SubFrameAjEmploye;
 import java.awt.event.*;
 
 public class WindowClosing extends WindowAdapter {
 
 	private FramePrincipale fp;
-	private SubFrameAjEmployes sf;
+	private SubFrameAjEmploye sf;
 		
 	public WindowClosing (FramePrincipale fp) {
 		this.fp=fp;
 	}
 	
-	public WindowClosing (SubFrameAjEmployes sf) {
+	public WindowClosing (SubFrameAjEmploye sf) {
 		this.sf=sf;
 	}
 

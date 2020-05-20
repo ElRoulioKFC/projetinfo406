@@ -12,6 +12,11 @@ public class Salle {
 		this.capaciteS = capacite;
 		this.nomS = nom;
 	}
+	public Salle(String type, int capacite, String nom ) {
+		this.typeSalleS = type;
+		this.capaciteS = capacite;
+		this.nomS = nom;
+	}
 	
 	public int getid() {
 		return this.idS;
