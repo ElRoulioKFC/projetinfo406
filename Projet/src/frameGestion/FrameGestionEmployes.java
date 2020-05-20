@@ -19,12 +19,12 @@ public class FrameGestionEmployes extends JFrame {
 	/*private ImageIcon monimage ;*/
 	
 	Employe employe1 = new Employe(1,"Massag","Paule Cadrelle",7000,40,"Data Scientist","massagcadrelle@gmail.com" ) ; 
-	Employe employe2 = new Employe(2,"Brivet","Brivet",5000,45,"Data Ingeneer","alexisbrivet@gmail.com") ;
-	Employe employe3 = new Employe(3,"Geyer","jules",5000,45,"Data Analyst","geyerjules@gmail.com") ;
-	Employe employe4 = new Employe(4,"El ouali","ines",5000,45,"Developpeur web","elouali@gmail.com") ;
-	Employe employe5 = new Employe(5,"signorina","bianca",5000,45,"Data Ingeneer","signorinabianca@gmail.com") ;
-	Employe employe6 = new Employe(6,"maulet","morgane",8000,45,"Prof de maths","mauletmorgane@gmail.com") ;
-	Employe employe7 = new Employe(7,"Kenny","davila",5000,45,"Data Ingeneer","geyerjules@gmail.com") ;
+	Employe employe2 = new Employe(2,"Brivet","Alexis",5000,45,"Data Ingeneer","alexisbrivet@gmail.com") ;
+	Employe employe3 = new Employe(3,"Geyer","Jules",5000,45,"Data Analyst","geyerjules@gmail.com") ;
+	Employe employe4 = new Employe(4,"El ouali","Ines",5000,45,"Developpeur web","elouali@gmail.com") ;
+	Employe employe5 = new Employe(5,"Signorina","Bianca",5000,45,"Data Ingeneer","signorinabianca@gmail.com") ;
+	Employe employe6 = new Employe(6,"Maulet","Morgane",8000,45,"Prof de maths","mauletmorgane@gmail.com") ;
+	Employe employe7 = new Employe(7,"Kenny","Davila",5000,45,"Data Ingeneer","geyerjules@gmail.com") ;
 	Employe employe8 = new Employe(8,"Plassass","Alexia",8000,45,"Data Scientist","alexiaplassass@gmail.com") ;
 	
 	JPanel gauche = new JPanel(new BorderLayout());
@@ -38,14 +38,14 @@ public class FrameGestionEmployes extends JFrame {
 	
 	JPanel centredroite = new JPanel(new BorderLayout()) ;
 	
-	JButton bouton1 = new JButton("EMPLOYE NUMERO 1") ;
-	JButton bouton2 = new JButton("EMPLOYE NUMERO 2") ;
-	JButton bouton3 = new JButton("EMPLOYE NUMERO 3") ;
-	JButton bouton4 = new JButton("EMPLOYE NUMERO 4") ;
-	JButton bouton5 = new JButton("EMPLOYE NUMERO 5") ;
-	JButton bouton6 = new JButton("EMPLOYE NUMERO 6") ;
-	JButton bouton7 = new JButton("EMPLOYE NUMERO 7") ;
-	JButton bouton8 = new JButton("EMPLOYE NUMERO 8") ;
+	JButton bouton1 = new JButton(employe1.getNom() + " " + employe1.getPrenom()) ;
+	JButton bouton2 = new JButton(employe2.getNom() + " " + employe2.getPrenom()) ;
+	JButton bouton3 = new JButton(employe3.getNom() + " " + employe3.getPrenom()) ;
+	JButton bouton4 = new JButton(employe4.getNom() + " " + employe4.getPrenom()) ;
+	JButton bouton5 = new JButton(employe5.getNom() + " " + employe5.getPrenom()) ;
+	JButton bouton6 = new JButton(employe6.getNom() + " " + employe6.getPrenom()) ;
+	JButton bouton7 = new JButton(employe7.getNom() + " " + employe7.getPrenom()) ;
+	JButton bouton8 = new JButton(employe8.getNom() + " " + employe8.getPrenom()) ;
 
 	
    

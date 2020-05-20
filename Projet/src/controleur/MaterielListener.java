@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import frameGestion.FrameGestionMateriel;
 
 public class MaterielListener implements ActionListener {
-	private FrameGestionMateriel fgo;
 	
 	public MaterielListener(){
 		
@@ -15,7 +14,7 @@ public class MaterielListener implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		this.fgo = new FrameGestionMateriel();
+		new FrameGestionMateriel();
 
 	}
 

@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import frameGestion.*;
 
 public class ProjetListener implements ActionListener  {
-	private FrameGestionProjet fgp;
 	
 	public ProjetListener() {
 		
@@ -15,6 +14,6 @@ public class ProjetListener implements ActionListener  {
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		this.fgp = new FrameGestionProjet();
+		new FrameGestionProjet();
 	}
 }

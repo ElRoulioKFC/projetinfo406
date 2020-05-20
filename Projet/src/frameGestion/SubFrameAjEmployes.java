@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import controleur.Employe;
 import controleur.ListeEmploye;
-import frameGestion.FrameGestionEmployes;
+
 
 public class SubFrameAjEmployes extends Frame {
 	JTextField nom = new JTextField("",15);
