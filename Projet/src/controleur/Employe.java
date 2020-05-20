@@ -2,9 +2,9 @@ package controleur;
 
 import java.awt.event.ActionListener;
 
-public class Employes {
+public class Employe {
 	private int idE;
-	private Employes idSup;
+	private Employe idSup;
 	private String nomE;
 	private String prenomE;
 	private int salaireE;
@@ -12,8 +12,9 @@ public class Employes {
 	private double nb_heur_act;
 	private String metier;
 	private String mail;
-	public Employes(int id, String nom, String prenom, int salaire, double nb_heure,String metier, String mail) {
+	public Employe(int id, String nom, String prenom, int salaire, double nb_heure,String metier, String mail) {
 		this.idE = id;
+		this.idSup = null;
 		this.nomE = nom;
 		this.prenomE = prenom;
 		this.salaireE = salaire;
@@ -22,7 +23,17 @@ public class Employes {
 		this.metier = metier;
 		this.mail = mail;
 	}
-	public Employes(int id, String nom, String prenom, int salaire, double nb_heure,String metier, String mail,Employes sup) {
+	public Employe(String nom, String prenom ,String metier, String mail, double nb_heure ,int salaire) {
+		this.idSup = null;
+		this.nomE = nom;
+		this.prenomE = prenom;
+		this.salaireE = salaire;
+		this.nb_heur_sem =nb_heure;
+		this.nb_heur_act = 0;
+		this.metier = metier;
+		this.mail = mail;
+	}
+	public Employe(int id, String nom, String prenom, int salaire, double nb_heure,String metier, String mail,Employe sup) {
 		this.idE = id;
 		this.nomE = nom;
 		this.prenomE = prenom;
@@ -33,8 +44,29 @@ public class Employes {
 		this.mail = mail;
 		this.idSup = sup;
 	}
+	public Employe() {
+		this.idE = -1;
+		this.idSup = null;
+		this.nomE = "";
+		this.prenomE = "";
+		this.salaireE = 0;
+		this.nb_heur_sem = 0;
+		this.nb_heur_act = 0;
+		this.metier = "";
+		this.mail = "";
+	}
+	public Employe EmpNull(){
+		return new Employe();
+		
+	}
 	public String getNom() {
 		return this.nomE;
+	}
+	public void setId(int id) {
+		this.idE = id ;
+	}
+	public void setIdSup(Employe id) {
+		this.idSup = id;
 	}
 	public String getPrenom() {
 		return this.prenomE;
@@ -70,6 +102,12 @@ public class Employes {
 		this.nb_heur_sem = this.nb_heur_sem - heure;
 		
 	}
-	
 
+	public int getId() {
+		return this.idE;
+	}
+	
+	public boolean estEmpNull() {
+		return (this.idE == -1);
+	}
 }
