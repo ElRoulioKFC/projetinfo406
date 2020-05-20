@@ -4,7 +4,7 @@ import java.awt.*;
 
 import javax.swing.JButton;
 
-public class CanvasEmployés extends Canvas {
+public class CanvasEmploye extends Canvas {
 	
 	public void paint(Graphics g) {
 		
@@ -34,7 +34,7 @@ public class CanvasEmployés extends Canvas {
 	}
 	
 	public static void main(String[] args) {
-		new CanvasEmployés() ;
+		new CanvasEmploye() ;
 		
 	}
 

@@ -3,16 +3,16 @@ package controleur;
 
 import java.util.*;
 
-public class ListeEmployes {
-	public ArrayList<Employes> listeEmployes;
+public class ListeEmploye {
+	public ArrayList<Employe> listeEmployes;
 	
-	public ListeEmployes() {
-		this.listeEmployes = new ArrayList<Employes>();
+	public ListeEmploye() {
+		this.listeEmployes = new ArrayList<Employe>();
 	}
-	public void ajouter(Employes employes) {
+	public void ajouter(Employe employes) {
 		this.listeEmployes.add(employes);
 	}
-	public void supprimer(Employes employes) {
+	public void supprimer(Employe employes) {
 		this.listeEmployes.remove(employes);
 	}
 	public String toString() {
@@ -37,9 +37,9 @@ public class ListeEmployes {
 		return this.listeEmployes.size();
 	}
 	
-	public Employes recupEmpByNom(String nom) {
+	public Employe recupEmpByNom(String nom) {
 		int i = 0;
-		Employes emp = new Employes();
+		Employe emp = new Employe();
 		emp.EmpNull();
 		boolean trouve = false;
 		while (trouve == false && i != this.taille()) {

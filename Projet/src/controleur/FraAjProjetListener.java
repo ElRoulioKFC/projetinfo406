@@ -7,10 +7,10 @@ import frameGestion.FrameGestionProjet;
 import frameGestion.SubFrameAjEmployes;
 import frameGestion.SubFrameAjProjets;
 
-public class FraAjProjetsListener implements ActionListener{
+public class FraAjProjetListener implements ActionListener{
 	private FrameGestionProjet fgp;
 	
-	public FraAjProjetsListener(){
+	public FraAjProjetListener(){
 		
 	}
 	

@@ -6,10 +6,10 @@ import java.awt.event.*;
 import javax.swing.*;
 import frameGestion.*;
 
-public class FraAjEmployesListener implements ActionListener{
+public class FraAjEmployeListener implements ActionListener{
 	private FrameGestionEmployes fge;
 	
-	public FraAjEmployesListener(){
+	public FraAjEmployeListener(){
 		
 	}
 	

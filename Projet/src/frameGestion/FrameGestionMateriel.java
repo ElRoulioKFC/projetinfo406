@@ -6,16 +6,16 @@ import javax.swing.*;
 
 import framePrincipale.FramePrincipale;
 
-public class FrameGestionOrdinateur extends JFrame {
+public class FrameGestionMateriel extends JFrame {
 
 	final static int HAUTEUR = 600;
 	final static int LARGEUR = 1000;
-	private CanvasEmployés canvas = new CanvasEmployés() ;
+	private CanvasEmploye canvas = new CanvasEmploye() ;
 	
 	JPanel gauche = new JPanel(new BorderLayout());
 	JPanel bas = new JPanel(new GridLayout(1,2));
 	
-	public FrameGestionOrdinateur() {
+	public FrameGestionMateriel() {
 		this.setTitle("Gestion des Ordinateurs");
 		this.setSize(LARGEUR,HAUTEUR);
 		
@@ -35,7 +35,7 @@ public class FrameGestionOrdinateur extends JFrame {
 	}
 	
 	public static void main (String [] args){
-		new FrameGestionOrdinateur ();
+		new FrameGestionMateriel ();
 
 	}
 

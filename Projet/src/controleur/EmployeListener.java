@@ -6,10 +6,10 @@ import java.awt.event.ActionListener;
 
 import frameGestion.*;
 
-public class EmployesListener implements ActionListener  {
+public class EmployeListener implements ActionListener  {
 	private FrameGestionEmployes fge;
 	
-	public EmployesListener() {
+	public EmployeListener() {
 		
 	}
 	

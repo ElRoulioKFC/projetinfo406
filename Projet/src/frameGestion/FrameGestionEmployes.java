@@ -14,18 +14,18 @@ public class FrameGestionEmployes extends JFrame {
 	final static int HAUTEUR = 600;
 	final static int LARGEUR = 1000;
 	
-	private ListeEmployes le = new ListeEmployes() ;
-	private CanvasEmployés canvas = new CanvasEmployés() ; 
+	private ListeEmploye le = new ListeEmploye() ;
+	private CanvasEmploye canvas = new CanvasEmploye() ; 
 	/*private ImageIcon monimage ;*/
 	
-	Employes employe1 = new Employes(1,"Massag","Paule Cadrelle",7000,40,"Data Scientist","massagcadrelle@gmail.com" ) ; 
-	Employes employe2 = new Employes(2,"Brivet","Brivet",5000,45,"Data Ingeneer","alexisbrivet@gmail.com") ;
-	Employes employe3 = new Employes(3,"Geyer","jules",5000,45,"Data Analyst","geyerjules@gmail.com") ;
-	Employes employe4 = new Employes(4,"El ouali","ines",5000,45,"Developpeur web","elouali@gmail.com") ;
-	Employes employe5 = new Employes(5,"signorina","bianca",5000,45,"Data Ingeneer","signorinabianca@gmail.com") ;
-	Employes employe6 = new Employes(6,"maulet","morgane",8000,45,"Prof de maths","mauletmorgane@gmail.com") ;
-	Employes employe7 = new Employes(7,"Kenny","davila",5000,45,"Data Ingeneer","geyerjules@gmail.com") ;
-	Employes employe8 = new Employes(8,"Plassass","Alexia",8000,45,"Data Scientist","alexiaplassass@gmail.com") ;
+	Employe employe1 = new Employe(1,"Massag","Paule Cadrelle",7000,40,"Data Scientist","massagcadrelle@gmail.com" ) ; 
+	Employe employe2 = new Employe(2,"Brivet","Brivet",5000,45,"Data Ingeneer","alexisbrivet@gmail.com") ;
+	Employe employe3 = new Employe(3,"Geyer","jules",5000,45,"Data Analyst","geyerjules@gmail.com") ;
+	Employe employe4 = new Employe(4,"El ouali","ines",5000,45,"Developpeur web","elouali@gmail.com") ;
+	Employe employe5 = new Employe(5,"signorina","bianca",5000,45,"Data Ingeneer","signorinabianca@gmail.com") ;
+	Employe employe6 = new Employe(6,"maulet","morgane",8000,45,"Prof de maths","mauletmorgane@gmail.com") ;
+	Employe employe7 = new Employe(7,"Kenny","davila",5000,45,"Data Ingeneer","geyerjules@gmail.com") ;
+	Employe employe8 = new Employe(8,"Plassass","Alexia",8000,45,"Data Scientist","alexiaplassass@gmail.com") ;
 	
 	JPanel gauche = new JPanel(new BorderLayout());
 	JPanel bas = new JPanel(new GridLayout(1,2));
@@ -68,7 +68,7 @@ public class FrameGestionEmployes extends JFrame {
 		this.setSize(LARGEUR,HAUTEUR);
 		JButton ajouter = new JButton("Ajouter un Employé");
 		JButton supprimer = new JButton("Supprimer un Employé");
-		ajouter.addActionListener(new FraAjEmployesListener());
+		ajouter.addActionListener(new FraAjEmployeListener());
 		bas.add(ajouter);
 		bas.add(supprimer);
 		this.add(gauche,BorderLayout.WEST);

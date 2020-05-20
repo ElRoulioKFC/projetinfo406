@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
-import controleur.Employes;
-import controleur.ListeEmployes;
+import controleur.Employe;
+import controleur.ListeEmploye;
 import frameGestion.FrameGestionEmployes;
 
 public class SubFrameAjEmployes extends Frame {
@@ -47,7 +47,7 @@ public class SubFrameAjEmployes extends Frame {
 		
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			ListeEmployes liste = new ListeEmployes();//Ajouter la base de donnée
+			ListeEmploye liste = new ListeEmploye();//Ajouter la base de donnée
 			String nomE = nom.getText();
 			String prenomE = prenom.getText();
 			String metierE = metier.getText();
@@ -56,7 +56,7 @@ public class SubFrameAjEmployes extends Frame {
 			int salaireE;
 			nbhE = Double.parseDouble(nbh.getText());
 			salaireE = Integer.parseInt(salaire.getText());
-			Employes emp = new Employes(nomE,prenomE,metierE,mailE,nbhE,salaireE);
+			Employe emp = new Employe(nomE,prenomE,metierE,mailE,nbhE,salaireE);
 			emp.setId(1);
 			liste.ajouter(emp);//Ajouter la base de donnée
 			System.out.println(liste);

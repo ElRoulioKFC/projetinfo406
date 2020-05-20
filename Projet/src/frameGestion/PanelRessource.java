@@ -18,7 +18,7 @@ public class PanelRessource {
 	JPanel ressources = new JPanel(new GridLayout(3,7));
 	
 	JButton employe = new JButton("Employés");
-	JButton ordinateur = new JButton("Ordinateur");
+	JButton materiel = new JButton("Matériel");
 	JButton salle = new JButton("Salles");
 	
 	public JPanel PanelRess() {
@@ -36,7 +36,7 @@ public class PanelRessource {
 		
 		ressources.add(new Label(" "));
 		
-		ressources.add(ordinateur);
+		ressources.add(materiel);
 		
 		ressources.add(new Label(" "));
 		
@@ -51,8 +51,8 @@ public class PanelRessource {
 		ressources.add(new Label(" "));
 		ressources.add(new Label(" "));
 		
-		employe.addActionListener(new EmployesListener());
-		ordinateur.addActionListener(new OrdinateurListener());
+		employe.addActionListener(new EmployeListener());
+		materiel.addActionListener(new MaterielListener());
 		salle.addActionListener(new SalleListener());
 		
 		return ressources;

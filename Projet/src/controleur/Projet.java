@@ -9,9 +9,9 @@ public class Projet {
 	private double nbheureP;
 	private double nbheure_actP;
 	private Date datetime;
-	private Employes chefDeProjet;
+	private Employe chefDeProjet;
 	
-	public Projet(int id, String nom,String client, double nbH,Date datelimite, Employes chef) {
+	public Projet(int id, String nom,String client, double nbH,Date datelimite, Employe chef) {
 		this.idP = id;
 		this.nomP = nom;
 		this.nomClient = client;
@@ -20,7 +20,7 @@ public class Projet {
 		this.datetime = datelimite;
 		this.chefDeProjet = chef;
 	}
-	public Projet(String nom,String client, double nbH,Date datelimite, Employes chef) {
+	public Projet(String nom,String client, double nbH,Date datelimite, Employe chef) {
 		this.nomP = nom;
 		this.nomClient = client;
 		this.nbheure_actP = 0;

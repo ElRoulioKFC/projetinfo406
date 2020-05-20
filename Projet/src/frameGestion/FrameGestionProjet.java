@@ -3,14 +3,14 @@ package frameGestion;
 import java.awt.*;
 import javax.swing.*;
 
-import controleur.FraAjProjetsListener;
+import controleur.FraAjProjetListener;
 import controleur.ListeProjet;
 
 public class FrameGestionProjet extends JFrame {
 	private ListeProjet lp;
 	final static int HAUTEUR = 600;
 	final static int LARGEUR = 1000;
-	private CanvasEmployés canvas = new CanvasEmployés() ;
+	private CanvasEmploye canvas = new CanvasEmploye() ;
 	
 	JPanel gauche = new JPanel(new BorderLayout());
 	JPanel bas = new JPanel(new GridLayout(1,2));
@@ -20,7 +20,7 @@ public class FrameGestionProjet extends JFrame {
 		this.setSize(LARGEUR,HAUTEUR);
 		JButton ajouter = new JButton("Ajouter un Projet");
 		JButton supprimer = new JButton("Supprimer un Projet");
-		ajouter.addActionListener(new FraAjProjetsListener());
+		ajouter.addActionListener(new FraAjProjetListener());
 		bas.add(ajouter);
 		bas.add(supprimer);
 		this.add(gauche,BorderLayout.WEST);

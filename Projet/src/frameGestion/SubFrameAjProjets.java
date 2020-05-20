@@ -45,7 +45,7 @@ public class SubFrameAjProjets extends Frame{
 		
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			ListeEmployes listeEmp = new ListeEmployes();//Ajouter la base de donnée
+			ListeEmploye listeEmp = new ListeEmploye();//Ajouter la base de donnée
 			ListeProjet liste = new ListeProjet();//Ajouter la base de donnée
 			String nomP = nom.getText();
 			String clientP = client.getText();
@@ -54,7 +54,7 @@ public class SubFrameAjProjets extends Frame{
 			int mois = Integer.parseInt(date.getText().substring(3,5));
 			int annee = Integer.parseInt(date.getText().substring(6,10));
 			Date dateP = new Date(annee -1900, mois -1 , jour);
-			Employes chefP;
+			Employe chefP;
 			chefP = listeEmp.recupEmpByNom(chef.getText());
 			Projet projet = new Projet(nomP, clientP, nbhP, dateP, chefP);
 			liste.ajouter(projet);//Ajouter la base de donnée

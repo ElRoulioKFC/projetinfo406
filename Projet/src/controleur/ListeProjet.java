@@ -7,7 +7,6 @@ import java.util.*;
 public class ListeProjet {
 	private ArrayList<Projet> listeProjet;
 	
-	
 	public ListeProjet() {
 		this.listeProjet = new ArrayList<Projet>();
 	}
