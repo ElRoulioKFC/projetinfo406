@@ -51,6 +51,9 @@ public class ListeEmploye {
 		}
 		return emp;
 	}
+	public Employe recupEmp(int i) {
+		return this.listeEmployes.get(i);
+	}
 	
 	//public static void main(String[] args) {
 		//Employes emp1 = new Employes(1,"Brivet","Alexis",1000, 35, "informaticiens", "alexis.brivet@onsenfou.fr");
