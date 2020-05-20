@@ -38,7 +38,12 @@ public class Projet {
 		return this.idP;
 	}
 	public String toString() {
-		return "Projet: "+this.nomP+" Nombre d'heure: "+this.nbheureP+" Chef: "+this.chefDeProjet.toString();
+		return "<html> Nom: " + this.nomP + 
+				"<br> Client: " + this.nomClient +
+				"<br> Nombre d'heure éstimer: " + this.nbheureP +
+				"<br> Nombre d'heure accomplis: " + this.nbheure_actP +
+				"<br> Date Limite: " + this.datetime.toString() +
+				"<br> Chef de Projet" + this.chefDeProjet.getNom() + "</html>";
 	} 
 	
 	

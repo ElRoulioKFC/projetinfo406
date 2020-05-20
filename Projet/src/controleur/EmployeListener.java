@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import frameGestion.*;
 
 public class EmployeListener implements ActionListener  {
-	private FrameGestionEmployes fge;
 	
 	public EmployeListener() {
 		
@@ -15,6 +14,6 @@ public class EmployeListener implements ActionListener  {
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		this.fge = new FrameGestionEmployes();
+		new FrameGestionEmployes();
 	}
 }

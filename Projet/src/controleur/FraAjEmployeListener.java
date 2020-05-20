@@ -1,14 +1,9 @@
 package controleur;
 
-
-import java.awt.*;
 import java.awt.event.*;
-import javax.swing.*;
-import frameGestion.*;
+import frameGestion.SubFrameAjEmployes;
 
 public class FraAjEmployeListener implements ActionListener{
-	private FrameGestionEmployes fge;
-	
 	public FraAjEmployeListener(){
 		
 	}

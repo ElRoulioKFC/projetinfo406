@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import frameGestion.*;
 
 public class SalleListener implements ActionListener {
-	private FrameGestionSalle fgs;
 	
 	public SalleListener() {
 		
@@ -15,6 +14,6 @@ public class SalleListener implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		this.fgs = new FrameGestionSalle();
+		new FrameGestionSalle();
 	}
 }

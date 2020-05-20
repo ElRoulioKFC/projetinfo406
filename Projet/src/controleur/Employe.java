@@ -1,6 +1,5 @@
 package controleur;
 
-import java.awt.event.ActionListener;
 
 public class Employe {
 	private int idE;
@@ -62,8 +61,14 @@ public class Employe {
 	public String getNom() {
 		return this.nomE;
 	}
+	public double getNbHAct() {
+		return this.nb_heur_act;
+	}
 	public void setId(int id) {
 		this.idE = id ;
+	}
+	public Employe getSuperieur(){
+		return this.idSup;
 	}
 	public void setIdSup(Employe id) {
 		this.idSup = id;
