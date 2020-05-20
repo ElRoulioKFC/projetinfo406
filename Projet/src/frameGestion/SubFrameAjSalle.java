@@ -8,7 +8,6 @@ import javax.swing.*;
 
 import controleur.ListeSalle;
 import controleur.Salle;
-import frameGestion.SubFrameAjProjets.AjoutProj;
 
 public class SubFrameAjSalle extends Frame{
 	JTextField nom = new JTextField("",15);

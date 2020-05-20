@@ -18,6 +18,9 @@ public class Salle {
 		this.nomS = nom;
 	}
 	
+	public Salle() {
+		this.idS = -1;
+	}
 	public int getid() {
 		return this.idS;
 	}

@@ -21,4 +21,22 @@ public class ListeSalle {
 		}
 		return res;
 	}
+	public int taille() {
+		return this.listeSalle.size();
+	}
+	
+	public Salle recupSallebyNom(String nom) {
+		int i = 0;
+		Salle sal = new Salle();
+		boolean trouve = false;
+		while (trouve == false && i < this.taille()) {
+			if (this.listeSalle.get(i).getNom() == nom) {
+				trouve = true;
+				sal = this.listeSalle.get(i);
+			}
+			i++;
+		}
+		return sal;
+
+	}
 }
