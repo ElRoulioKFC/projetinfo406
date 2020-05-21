@@ -36,7 +36,7 @@ public class ListeEmploye {
 	}
 	
 	public int recupLasteID() {
-		if (this.listeEmployes == null) {
+		if (this.taille() == 0) {
 			return 0;
 		}
 		else {
@@ -64,6 +64,18 @@ public class ListeEmploye {
 		}
 		return emp;
 	}
+	public void triNom(){
+		List<String> listnom = new ArrayList<String>();
+		for(int i= 0; i<this.taille(); i++) {
+			listnom.add(this.recupEmp(i).getNom());
+		}
+		Collections.sort(listnom);
+		ListeEmploye res = new ListeEmploye();
+		for (int i = 0 ; i<this.taille(); i++) {
+			res.ajouter(this.recupEmpByNom(listnom.get(i)));
+		}
+		this.listeEmployes = res.listeEmployes;
+	}
 	
 	public Employe recupEmp(int i) {
 		Employe emp = new Employe();
@@ -82,17 +94,7 @@ public class ListeEmploye {
 		return this.recupEmp(empcc) ;
 	}
 	
-	 public void boucle() {
-         for(int i=0; i<8; i++){
-       	   this.set( i , this.getNextEmp(i) ) ;
-         }
-	   
-  }
-	private void set(int i, Employe nextEmp) {
-		// TODO Auto-generated method stub
-		
-	}
-	
+
 /*	public Employe EmpSuivant (ListeEmploye listeEmployes) {
 		if( int i  < listeEmployes.taille() ) {
 			return listeEmployes.recupEmp(i+1) ;

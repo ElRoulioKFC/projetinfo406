@@ -46,9 +46,7 @@ public class Employe {
 	public Employe() {
 
 	}
-	public String bouton() {
-		return this.getNom() + " " + this.getPrenom();
-	}
+
 	public void EmpNull(){
 		this.idE = -1;
 		this.idSup = null;
