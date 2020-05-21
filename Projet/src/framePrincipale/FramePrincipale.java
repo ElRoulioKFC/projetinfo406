@@ -30,6 +30,7 @@ public class FramePrincipale extends JFrame {
 	 
 	 JButton Home = new JButton ("Home");
 	 JMenuBar mb = new JMenuBar();
+	 JMenuBar mb2 = new JMenuBar();
 
 	public FramePrincipale () {
 
@@ -46,8 +47,17 @@ public class FramePrincipale extends JFrame {
 
 		// mise en place du Boutton Home
 		this.Home.addActionListener(new RetourPP());
-		mb.add(Home);
-		this.setJMenuBar(mb);
+		this.mb.add(Home);
+		this.setJMenuBar(this.mb);
+		JMenu edtElement = new JMenu();
+	JMenuItem projet = new JMenuItem();
+//		JMenuItem Employe = new JMenuItem();
+//		JMenuItem Salles = new JMenuItem();
+		edtElement.add(projet);
+//		edtElement.add(Employe);
+//		edtElement.add(Salles);
+		this.mb.add(edtElement);
+		this.setJMenuBar(this.mb);
 
 
 
@@ -91,6 +101,7 @@ public class FramePrincipale extends JFrame {
 	public void PanelPP() {
 		if (this.getContentPane()!=PP) {
 			this.setContentPane(this.PP);
+			this.setJMenuBar(mb);
 		}
 		this.revalidate();
 
@@ -104,6 +115,7 @@ public class FramePrincipale extends JFrame {
 	//fonction pour passer sur le Panel de la Page EDT
 	public void PanelEDT() {
 		this.setContentPane(this.EDT);
+		this.setJMenuBar(mb2);
 		this.revalidate();
 
 	}
