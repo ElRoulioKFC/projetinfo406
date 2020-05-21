@@ -23,6 +23,14 @@ public class ListeEmploye {
 		return res;
 	}
 	
+	public String[] listeNom() {
+		String[] res = new String[this.taille()];
+		for(int i=0; i<this.taille();i++) {
+			res[i] = this.recupEmp(i).getNom();
+		}
+		return res;
+	}
+	
 	public int recupLasteID() {
 		if (this.listeEmployes == null) {
 			return 0;
@@ -33,7 +41,7 @@ public class ListeEmploye {
 
 	}
 	
-	private int taille() {
+	public int taille() {
 		return this.listeEmployes.size();
 	}
 	
@@ -52,7 +60,12 @@ public class ListeEmploye {
 		return emp;
 	}
 	public Employe recupEmp(int i) {
-		return this.listeEmployes.get(i);
+		Employe emp = new Employe();
+		
+		if(this.taille() > 0 && this.taille() >= i) {
+			emp = this.listeEmployes.get(i);
+		}
+		return emp;
 	}
 	
 	//public static void main(String[] args) {

@@ -44,6 +44,12 @@ public class Employe {
 		this.idSup = sup;
 	}
 	public Employe() {
+
+	}
+	public String bouton() {
+		return this.getNom() + " " + this.getPrenom();
+	}
+	public void EmpNull(){
 		this.idE = -1;
 		this.idSup = null;
 		this.nomE = "";
@@ -53,10 +59,6 @@ public class Employe {
 		this.nb_heur_act = 0;
 		this.metier = "";
 		this.mail = "";
-	}
-	public Employe EmpNull(){
-		return new Employe();
-		
 	}
 	public String getNom() {
 		return this.nomE;
