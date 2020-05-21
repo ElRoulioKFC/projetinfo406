@@ -44,8 +44,7 @@ public class Projet {
 				"<br> Nombre d'heure accomplis: " + this.nbheure_actP +
 				"<br> Date Limite: " + this.datetime.toString() +
 				"<br> Chef de Projet" + this.chefDeProjet.getNom() + "</html>";
-	} 
+		
+	    } 	
 	
-	
-	
-}
+    }

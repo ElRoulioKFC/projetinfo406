@@ -1,0 +1,154 @@
+
+//creation tables
+
+
+ CREATE TABLE employe IF NOT EXIST (
+ idEmploye NUMERIC(10) NOT NULL,
+ nomEmp VARCHAR (40) NOT NULL ,
+ prenomEmp VARCHAR (20) NOT NULL,
+ nbHeuresMoisEmp INT (10) ,
+ nbHeureActEmp INT (10),
+ metier VARCHAR(40) NOT NULL,
+ mailEmp VARCHAR(50) NOT NULL,
+ supperieurEmp NUMERIC(10),
+ pseudoEmp VARCHAR(45) NOT NULL ,
+ mdpEmp VARCHAR(45) NOT NULL,
+ roleEmp VARCHAR(20) NOT NULL,
+ CONSTRAINT pk_employe PRIMARY KEY (idEmploye)
+ CONSTRAINT fk_employe_supperieurEmp FOREIGN KEY(supperieurEmp)
+ REFERENCES employe(idEmploye),
+ CONSTRAINT uq_employe_idEmploye UNIQUE(idEmploye),
+ CONSTRAINT uq_employe_mailEmp UNIQUE(mailEmp),
+ CONSTRAINT uq_employe_pseudoEmp UNIQUE(pseudoEmp)
+ );
+ 
+ 
+ CREATE TABLE salle IF NOT EXIST (
+ idSalle NUMERIC(10) NOT NULL,
+ typeSalle VARCHAR(20) NOT NULL,
+ capaciteSalle NUMERCI(40) NOT NULL,
+ nomSalle VARCHAR(45) NOT NULL, 
+ CONSTRAINT uq_salle_idSalle UNIQUE(idSalle),
+ CONSTRAINT uq_salle_nomSalle UNIQUE(nomSalle), 
+ CONSTRAINT pk_salle PRIMARY KEY (idSalle)
+ );
+ 
+ CREATE TABLE materiel IF NOT EXIST (
+ idMat NUMERIC(10) NOT NULL,
+ nomMat VARCHAR(30) ,
+ typeMAT VARCHAR(20),
+ idSalle NUMERIC(10),
+ CONSTRAINT uq_materiel_idMat UNIQUE(idMat),
+ CONSTRAINT materiel PRIMARY KEY (idMat),
+ CONSTRAINT materiel_idSalle FOREIGN KEY (idSalle)
+ REFERENCES salle(idSalle)
+ );
+ 
+ CREATE TABLE projet IF NOT EXIST (
+ idProjet NUMERIC(10) NOT NULL,
+ nbHeureProj NUMERIC(20) NOT NULL,
+ nbHeureActProj NUMERIC(20),
+ deadline DATETIME ,
+ nomClientProj VARCHAR(45) NOT NULL,
+ nomProj VARCHAR(45) NOT NULL,
+ idEmploye NUMERIC(10) NOT NULL,
+ CONSTRAINT uq_projet_idProjet UNIQUE(nomProjet),
+ CONSTRAINT uq_projet_nomProjet UNIQUE(nomProjet),
+ CONSTRAINT pk_projet PRIMARY KEY (idProjet),
+ CONSTRAINT fk_projet_idEmploye FOREIGN KEY(idEmploye) 
+ REFERENCES employe(idEmploye)
+ );
+ 
+ CREATE TABLE employe_projet IF NOT EXIST (
+ idEmploye NUMERIC(10) NOT NULL,
+ idProjet NUMERIC (10) NOT NULL,
+ nbHeureEmpProj (20),
+ CONSTRAINT pk_employe_projet PRIMARY KEY (idEmploye),
+ CONSTRAINT pk_employe_projet PRIMARY KEY (idProjet),
+ CONSTRAINT fk_employe_projet_idEmploye (idEmploye) 
+ REFERENCES employe(idEmploye),
+ CONSTRAINT fk_employe_projet_idProjet (idProjet)
+ REFERENCES projet(idProjet)
+ );
+ 
+ CREATE TABLE competence IF NOT EXIST (
+ idComp NUMERIC(10) NOT NULL,
+ nomComp VARCHAR (45) NOT NULL,
+ typeComp VARCHAR (45) NOT NULL,
+ CONSTRAINT uq_competence_idComp UNIQUE(idComp),
+ CONSTRAINT pk_competence PRIMARY KEY (idComp)
+ );
+ 
+ CREATE TABLE competence_employe IF NOT EXIST (
+ idComp NUMERIC(10) NOT NULL,
+ idEmploye NUMERIC(10) NOT NULL,
+ niveauMaitrise CHAR NOT NULL,
+ CONSTRAINT pk_competence_employe PRIMARY KEY (idEmploye),
+ CONSTRAINT pk_competenec_employe PRIMARY KEY(idComp),
+ CONSTRAINT fk_competence_employe_idEmploye FOREIGN KEY (idEmploye)
+ REFERENCES employe(idEmploye),
+ CONSTRAINT fk_competence_employe_idComp FOREIGN KEY(idComp)
+ REFERENCES competence(idComp)
+ );
+ 
+ 
+ CREATE TABLE creneau IF NOT EXIST(
+ idCreneau NUMERIC(10) NOT NULL,
+ debutCreneau DATETIME NOT NULL,
+ finCreneau DATETIME NOT NULL,
+ idProjet NUMERIC (10),
+ idSalle NUMERIC(10),
+ confirmation CHAR NOT NULL,
+ CONSTRAINT uq_creneau_idCreneau UNIQUE(idCreneau),
+ CONSTRAINT pk_creneau PRIMARY KEY(idCreneau),
+ CONSTRAINT fk_creneau_idProjet FOREIGN KEY (idProjet)
+ REFERENCES projet(idProjet),
+ CONSTRAINT fk_creneau_idSalle FOREIGN KEY(idSalle)
+ REFERENCES salle(idSalle)
+ );
+ 
+ CREATE TABLE employe_creneau IF NOT EXIST (
+ idEmploye NUMERIC(10) NOT NULL,
+ idCreneau NUMERIC(10) NOT NULL,
+ CONSTRAINT pk_employe_creneau PRIMARY KEY(idEmploye),
+ CONSTRAINT pk_employe_creneau PRIMARY KEY(idCreneay),
+ CONSTRAINT fk_employe_creneau_idEmploye FOREIGN KEY (idEmploye)
+ REFERENCES employe(idEmploye),
+ CONSTRAINT fk_employe_creneau_idCreneau FOREIGN KEY (idCreneau)
+ REFERENCES creneau(idCreneau)
+ );
+ 
+ CREATE TABLE notif IF NOT EXIST( 
+ idNotif NUMERIC(10) NOT NULL,
+ typeNotif VARCHAR(45),
+ idCreneau NUMERIC(10),
+ etatNOTIF CHAR,
+ idEmploye NUMERIC(10),
+ CONSTRAINT uq_notif_idNotif UNIQUE(idNotif),
+ CONSTRAINT pk_notif PRIMARY KEY (idNotif),
+ CONSTRAINT fk_notif_idCreneau FOREIGN KEY (idCreneau) 
+ REFERENCES creneau(idCreneau),
+ CONSTRAINT fk_notif_idEmploye FOREIGN KEY (idEmploye)
+ REFERENCES employe(idEmploye)
+ );
+ 
+
+ //selection tables
+ 
+ FROM employe SELECT idEmploye, nomEmp, prenomEmp, nbHeuresMoisEmp, metier, mailEmp,supperieurEmp, pseudoEmp ORDER BY nomEmp;
+ 
+ FROM employe SELECT idEmploye, nomEmp, prenomEmp, nbHeuresMoisEmp, metier, mailEmp,supperieurEmp, pseudoEmp  WHERE nomEmp ="a" ORDER BY metier; 
+ 
+ FROM employe SELECT idEmploye, nomEmp, prenomEmp, nbHeuresMoisEmp, metier, mailEmp,supperieurEmp, pseudoEmp  WHERE supperieurEmp ="x" ORDER BY nomEmp;
+  
+ FROM employe SELECT idEmploye, nomEmp, prenomEmp, nbHeuresMoisEmp, metier, mailEmp,supperieurEmp, pseudoEmp  WHERE metier ="a" ORDER BY nomEmp;
+ 
+  
+ //modification ligne
+ 
+ //suppression ligne
+ 
+ //ajout ligne 
+ 
+ 
+ 
