@@ -89,6 +89,10 @@ public class Employe {
 		return this.mail ;
 	}
 	
+	 public String bouton() {
+	        return this.getNom() + " " + this.getPrenom();
+	    }
+	
 	public String toString() {
 		return ("<html> Nom: " + this.nomE + "<br> Prenom: " + this.prenomE + 
 				                             "<br> Salaire: " + this.salaireE + " Euros" +

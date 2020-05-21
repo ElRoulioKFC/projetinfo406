@@ -16,6 +16,7 @@ public class FrameGestionEmploye extends JFrame {
 	
 	private ListeEmploye le = new ListeEmploye() ;
 	private CanvasEmploye canvas = new CanvasEmploye() ; 
+	int i = 0 ;
 	/*private ImageIcon monimage ;*/
 	
 	Employe employe1 = new Employe(1,"Massag","Paule Cadrelle",7000,40,"Data Scientist","massagcadrelle@gmail.com" ) ; 
@@ -41,12 +42,14 @@ public class FrameGestionEmploye extends JFrame {
 	JButton plushaut = new JButton ("UP") ;
 	JButton plusbas = new JButton("DOWN") ;
 	
-	JPanel hautdroite = new JPanel(new BorderLayout()) ;
-	JPanel basdroite = new JPanel(new BorderLayout()) ;
+	/*JPanel hautdroite = new JPanel(new BorderLayout()) ;
+	JPanel basdroite = new JPanel(new BorderLayout()) ;*/
 	
 	JPanel centredroite = new JPanel(new BorderLayout()) ;
 	
-	JButton bouton1 = new JButton(employe1.getNom() + " " + employe1.getPrenom()) ;
+	
+	
+/*	JButton bouton1 = new JButton(employe1.getNom() + " " + employe1.getPrenom()) ;
 	JButton bouton2 = new JButton(employe2.getNom() + " " + employe2.getPrenom()) ;
 	JButton bouton3 = new JButton(employe3.getNom() + " " + employe3.getPrenom()) ;
 	JButton bouton4 = new JButton(employe4.getNom() + " " + employe4.getPrenom()) ;
@@ -62,7 +65,7 @@ public class FrameGestionEmploye extends JFrame {
 	JButton bouton13 = new JButton(employe13.getNom() + " " + employe13.getPrenom()) ;
 	JButton bouton14 = new JButton(employe14.getNom() + " " + employe14.getPrenom()) ;
 	JButton bouton15 = new JButton(employe15.getNom() + " " + employe15.getPrenom()) ;
-	JButton bouton16 = new JButton(employe16.getNom() + " " + employe16.getPrenom()) ;
+	JButton bouton16 = new JButton(employe16.getNom() + " " + employe16.getPrenom()) ; */
 
 	
    
@@ -79,6 +82,26 @@ public class FrameGestionEmploye extends JFrame {
 	    le.ajouter(employe6) ;
 	    le.ajouter(employe7) ;
 	    le.ajouter(employe8) ;
+
+	    le.ajouter(employe9) ;
+	    le.ajouter(employe10) ;
+	    le.ajouter(employe11) ;
+	    le.ajouter(employe12) ;
+	    le.ajouter(employe13) ;
+	    le.ajouter(employe14) ;
+	    le.ajouter(employe15) ;
+	    le.ajouter(employe16) ;
+	    
+	    JButton bouton1 = new JButton(le.recupEmp(i+0).bouton()) ;
+		JButton bouton2 = new JButton(le.recupEmp(i+1).bouton()) ;
+		JButton bouton3 = new JButton(le.recupEmp(i+2).bouton()) ;
+		JButton bouton4 = new JButton(le.recupEmp(i+3).bouton()) ;
+		JButton bouton5 = new JButton(le.recupEmp(i+4).bouton()) ;
+		JButton bouton6 = new JButton(le.recupEmp(i+5).bouton()) ;
+		JButton bouton7 = new JButton(le.recupEmp(i+6).bouton()) ;
+		JButton bouton8 = new JButton(le.recupEmp(i+7).bouton()) ;
+		
+		
 	    
 	    centredroite.setLayout(null);
 		this.setTitle("Gestion des Employes");
@@ -91,11 +114,11 @@ public class FrameGestionEmploye extends JFrame {
 		this.add(gauche,BorderLayout.WEST);
 		gauche.add(bas,BorderLayout.SOUTH);
 		
-		hautdroite.add(plushaut , BorderLayout.EAST) ;
-		basdroite.add(plusbas , BorderLayout.EAST) ;
+		/*hautdroite.add(plushaut , BorderLayout.EAST) ;
+		basdroite.add(plusbas , BorderLayout.EAST) ;*/
 	
-		this.add(hautdroite , BorderLayout.NORTH) ;
-		this.add(basdroite , BorderLayout.SOUTH) ;
+		/*this.add(hautdroite , BorderLayout.NORTH) ;
+		this.add(basdroite , BorderLayout.SOUTH) ;*/
 		
 		bouton1.setBounds(330,70,180,30);
 		bouton2.setBounds(330,120,180,30);
@@ -115,7 +138,12 @@ public class FrameGestionEmploye extends JFrame {
 		centredroite.add(bouton7) ;
 		centredroite.add(bouton8) ;
 		
-		canvas.setBounds(0 , 0 , 1000,600);
+		centredroite.add(plushaut) ;
+		plushaut.setBounds(400, 20, 50, 30);
+		centredroite.add(plusbas) ;
+		plusbas.setBounds(390 , 470 , 80 , 30);
+		
+		canvas.setBounds(0,0,1000,600);
 		centredroite.add(canvas) ;
 		
 		this.add(centredroite , BorderLayout.CENTER) ;
@@ -128,7 +156,7 @@ public class FrameGestionEmploye extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				e.getSource();
 				String s1 = bouton1.getText() ;
-				label.setText(employe1.toString() );
+				label.setText((le.recupEmp(i+0).toString()) );
 				
 			}
 		});
@@ -137,7 +165,7 @@ public class FrameGestionEmploye extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				e.getSource();
 				String s1 = bouton2.getText() ;
-				label.setText(employe2.toString() );
+				label.setText((le.recupEmp(i+1).toString() ));
 				
 			}
 		});
@@ -145,7 +173,7 @@ public class FrameGestionEmploye extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				e.getSource();
 				String s1 = bouton3.getText() ;
-				label.setText(employe3.toString() );
+				label.setText((le.recupEmp(i+2).toString() ));
 				
 			}
 		});
@@ -153,7 +181,7 @@ public class FrameGestionEmploye extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				e.getSource();
 				String s1 = bouton4.getText() ;
-				label.setText(employe4.toString() );
+				label.setText((le.recupEmp(i+3).toString() ));
 				
 			}
 		});
@@ -161,7 +189,7 @@ public class FrameGestionEmploye extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				e.getSource();
 				String s1 = bouton5.getText() ;
-				label.setText(employe5.toString() );
+				label.setText((le.recupEmp(i+4).toString() ));
 				
 			}
 		});
@@ -169,7 +197,7 @@ public class FrameGestionEmploye extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				e.getSource();
 				String s1 = bouton6.getText() ;
-				label.setText(employe6.toString() );
+				label.setText((le.recupEmp(i+5).toString()) );
 				
 			}
 		});
@@ -177,7 +205,7 @@ public class FrameGestionEmploye extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				e.getSource();
 				String s1 = bouton7.getText() ;
-				label.setText(employe7.toString() );
+				label.setText((le.recupEmp(i+6).toString()) );
 				
 			}
 		});
@@ -185,17 +213,67 @@ public class FrameGestionEmploye extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				e.getSource();
 				String s1 = bouton8.getText() ;
-				label.setText(employe8.toString() );
+				label.setText((le.recupEmp(i+7).toString() ));
 				
 			}
 		});
+	   
+	  
+	  plusbas.addActionListener(new ActionListener() {
+		  public void actionPerformed(ActionEvent e) {
+			  if (i < le.taille() - 8 ){
+				  i = i + 1  ;
+			  }
+			  else {
+				  i = i ;
+			  }
+			 
+			    bouton1.setText(le.recupEmp(i+0).bouton());
+				bouton2.setText(le.recupEmp(i+1).bouton());
+				bouton3.setText(le.recupEmp(i+2).bouton());
+				bouton4.setText(le.recupEmp(i+3).bouton());
+				bouton5.setText(le.recupEmp(i+4).bouton());
+				bouton6.setText(le.recupEmp(i+5).bouton());
+				bouton7.setText(le.recupEmp(i+6).bouton());
+				bouton8.setText(le.recupEmp(i+7).bouton());
+				
+			  revalidate() ;
+		  }
+	  }) ;
+	  
+	  plushaut.addActionListener(new ActionListener() {
+		  public void actionPerformed(ActionEvent e) {
+			  if (i > 0 ){
+				  i = i - 1  ;
+			  }
+			  else {
+				  i = i ;
+			  }
+			 
+			    bouton1.setText(le.recupEmp(i+0).bouton());
+				bouton2.setText(le.recupEmp(i+1).bouton());
+				bouton3.setText(le.recupEmp(i+2).bouton());
+				bouton4.setText(le.recupEmp(i+3).bouton());
+				bouton5.setText(le.recupEmp(i+4).bouton());
+				bouton6.setText(le.recupEmp(i+5).bouton());
+				bouton7.setText(le.recupEmp(i+6).bouton());
+				bouton8.setText(le.recupEmp(i+7).bouton());
+				
+			  revalidate() ;
+		  }
+	  }) ;
 	  
 	    this.setVisible(true) ;
 		
 	}
 	
+	protected Object getNextEmp() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	public static void main (String[]args) {
-		new FrameGestionEmployes() ;
+		new FrameGestionEmploye() ;
 	}
 	
 }

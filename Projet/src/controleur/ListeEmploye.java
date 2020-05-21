@@ -1,10 +1,14 @@
 package controleur;
 
+import javax.swing.JButton ;
 
+import java.awt.event.ActionEvent;
 import java.util.*;
 
 public class ListeEmploye {
-	public ArrayList<Employe> listeEmployes;
+	private  ArrayList<Employe> listeEmployes;
+	/*private int indiceEmp = 0 ;
+	private Employe empcourant ;*/
 	
 	public ListeEmploye() {
 		this.listeEmployes = new ArrayList<Employe>();
@@ -26,14 +30,15 @@ public class ListeEmploye {
 	public int recupLasteID() {
 		if (this.listeEmployes == null) {
 			return 0;
-		}else {
+		}
+		else {
 			int i = this.taille() -1;
 			return this.listeEmployes.get(i).getId();
 		}
 
 	}
 	
-	private int taille() {
+	public int taille() {
 		return this.listeEmployes.size();
 	}
 	
@@ -51,9 +56,42 @@ public class ListeEmploye {
 		}
 		return emp;
 	}
+	
 	public Employe recupEmp(int i) {
 		return this.listeEmployes.get(i);
 	}
+	
+	public Employe getNextEmp(int empcc) {
+		Employe nextemp = this.recupEmp(empcc) ;
+		if(empcc < this.taille() - 1 ) {
+			empcc = empcc + 1 ;
+		}
+		return this.recupEmp(empcc) ;
+	}
+	
+	 public void boucle() {
+         for(int i=0; i<8; i++){
+       	   this.set( i , this.getNextEmp(i) ) ;
+         }
+	   
+  }
+	private void set(int i, Employe nextEmp) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+/*	public Employe EmpSuivant (ListeEmploye listeEmployes) {
+		if( int i  < listeEmployes.taille() ) {
+			return listeEmployes.recupEmp(i+1) ;
+		}*/
+		
+		/*
+		for (int i = 0 ; i < ((List<Employe>) listeEmployes).size() ; i++ ) {
+			return  listeEmployes.get(i+1) ;	
+		}
+	}*/
+
+	
 	
 	//public static void main(String[] args) {
 		//Employes emp1 = new Employes(1,"Brivet","Alexis",1000, 35, "informaticiens", "alexis.brivet@onsenfou.fr");
