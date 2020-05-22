@@ -48,13 +48,10 @@ public class CreationTable {
 				+ "nbHeureActEmp INT (10),"
 				+ "metier VARCHAR(40) NOT NULL,"
 				+ "mailEmp VARCHAR(50) NOT NULL,"
-				+ "superieurEmp INT,"
 				+ "pseudoEmp VARCHAR(45) NOT NULL ,"
 				+ "mdpEmp VARCHAR(45) NOT NULL,"
 				+ "roleEmp VARCHAR(20) NOT NULL,"
 				+ "salaireEmp NUMERIC(10)," + 
-				"CONSTRAINT fk_Employe_superieurEmp FOREIGN KEY(superieurEmp) " + 
-				"REFERENCES Employe(idEmploye)," + 
 				"CONSTRAINT uq_Employe_mailEmp UNIQUE(mailEmp)," + 
 				"CONSTRAINT uq_Employe_pseudoEmp UNIQUE(pseudoEmp)" + 
 				");";
@@ -77,15 +74,15 @@ public class CreationTable {
 			 stmt.executeUpdate(sql);
 			 System.out.println("Table Salle faite");
 			 
-			 sql = " CREATE TABLE IF NOT EXISTS materiel(" + 
+			 sql = " CREATE TABLE IF NOT EXISTS Materiel(" + 
 			 		" idMat INT AUTO_INCREMENT," + 
 			 		" nomMat VARCHAR(30) ," + 
 			 		" typeMAT VARCHAR(20)," + 
-			 		" idSalle NUMERIC(10)," + 
-			 		" CONSTRAINT uq_materiel_idMat UNIQUE(idMat)," + 
-			 		" CONSTRAINT materiel PRIMARY KEY (idMat)," + 
-			 		" CONSTRAINT materiel_idSalle FOREIGN KEY (idSalle)" + 
-			 		" REFERENCES salle(idSalle)" + 
+			 		" idSal INT," + 
+			 		" CONSTRAINT uq_Materiel_idMat UNIQUE(idMat)," + 
+			 		" CONSTRAINT Materiel PRIMARY KEY (idMat)," + 
+			 		" CONSTRAINT Materiel_idSal FOREIGN KEY (idSal)" + 
+			 		" REFERENCES Salle(idSalle)" + 
 			 		" );" + 
 			 		" ";
 			 stmt.executeUpdate(sql);
@@ -212,29 +209,29 @@ public class CreationTable {
 			 System.out.println("drop Employe_Creneau fait");
 
 			 
-			 sql = "DROP TABLE IF EXISTS Creneau";
-			 stmt.executeUpdate(sql);
-			 System.out.println("drop Creneaux fait");
-			 
-			 
-			 sql = "DROP TABLE IF EXISTS Projet";
-			 stmt.executeUpdate(sql);
-			 System.out.println("drop Projet fait");
-			 
 			 sql = "DROP TABLE IF EXISTS Materiel";
 			 stmt.executeUpdate(sql);
 			 System.out.println("drop Materiel fait");
 			 
-			 sql = "DROP TABLE IF EXISTS Salle";
-			 stmt.executeUpdate(sql);
-			 System.out.println("drop Salle fait");
-
 			 
 			 sql = "DROP TABLE IF EXISTS Employe";
 			 stmt.executeUpdate(sql);
 			 System.out.println("drop Employe fait");
 			 
-
+			 sql = "DROP TABLE IF EXISTS Projet";
+			 stmt.executeUpdate(sql);
+			 System.out.println("drop Projet fait");
+			  
+			 
+			 sql = "DROP TABLE IF EXISTS Creneau";
+			 stmt.executeUpdate(sql);
+			 System.out.println("drop Creneaux fait");
+			 
+			 
+			 sql = "DROP TABLE IF EXISTS Salle";
+			 stmt.executeUpdate(sql);
+			 System.out.println("drop Salle fait");
+			 
 			 
 			 con.close();
 		} catch(SQLException e){
