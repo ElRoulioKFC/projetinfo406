@@ -2,6 +2,7 @@ package frameGestion;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.*;
 
@@ -59,7 +60,12 @@ public class SubFrameAjEmploye extends Frame {
 			nbhE = Integer.parseInt(nbh.getText());
 			salaireE = Integer.parseInt(salaire.getText());
 			Employe emp = new Employe(nomE,prenomE,metierE,mailE,nbhE,salaireE);
-			SqlEmploye.insertion(nomE, prenomE, nbhE, 0, metierE, mailE, 1, nomE + prenomE, nomE + prenomE, "Le Role est inutile", salaireE);
+			try {
+				SqlEmploye.insertion(nomE, prenomE, nbhE, 0, metierE, mailE , nomE + prenomE, nomE + prenomE, "Le Role est inutile", salaireE);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			emp.setId(1);
 			double nb = (double)nbhE;
 			liste.ajouter(emp);//Ajouter la base de donnée

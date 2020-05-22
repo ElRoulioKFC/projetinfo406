@@ -51,7 +51,7 @@ public class CreationTable {
 				+ "pseudoEmp VARCHAR(45) NOT NULL ,"
 				+ "mdpEmp VARCHAR(45) NOT NULL,"
 				+ "roleEmp VARCHAR(20) NOT NULL,"
-				+ "salaireEmp NUMERIC(10)," + 
+				+ "salaireEmp INT(10)," + 
 				"CONSTRAINT uq_Employe_mailEmp UNIQUE(mailEmp)," + 
 				"CONSTRAINT uq_Employe_pseudoEmp UNIQUE(pseudoEmp)" + 
 				");";
