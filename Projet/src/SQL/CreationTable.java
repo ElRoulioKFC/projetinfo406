@@ -196,6 +196,23 @@ public class CreationTable {
 			 stmt.executeUpdate(sql);
 			 System.out.println("drop Competence_Employe fait");
 			 
+			 sql = "DROP TABLE IF EXISTS Materiel";
+			 stmt.executeUpdate(sql);
+			 System.out.println("drop Materiel fait");
+			 
+			 sql = "DROP TABLE IF EXISTS Notif";
+			 stmt.executeUpdate(sql);
+			 System.out.println("drop Notif fait");
+			 
+			 sql = "DROP TABLE IF EXISTS Employe_Creneau";
+			 stmt.executeUpdate(sql);
+			 System.out.println("drop Employe_Creneau fait");
+			 
+			 sql = "DROP TABLE IF EXISTS Creneau";
+			 stmt.executeUpdate(sql);
+			 System.out.println("drop Creneaux fait");
+			 
+			 
 			 sql = "DROP TABLE IF EXISTS Employe_Projet";
 			 stmt.executeUpdate(sql);
 			 System.out.println("drop Employe_Projet fait");
@@ -204,33 +221,21 @@ public class CreationTable {
 			 stmt.executeUpdate(sql);
 			 System.out.println("drop Competence fait");
 
-			 sql = "DROP TABLE IF EXISTS Employe_Creneau";
-			 stmt.executeUpdate(sql);
-			 System.out.println("drop Employe_Creneau fait");
-
 			 
-			 sql = "DROP TABLE IF EXISTS Materiel";
+			 sql = "DROP TABLE IF EXISTS Salle";
 			 stmt.executeUpdate(sql);
-			 System.out.println("drop Materiel fait");
+			 System.out.println("drop Salle fait");
 			 
+			 sql = "DROP TABLE IF EXISTS Projet";
+			 stmt.executeUpdate(sql);
+			 System.out.println("drop Projet fait");
 			 
 			 sql = "DROP TABLE IF EXISTS Employe";
 			 stmt.executeUpdate(sql);
 			 System.out.println("drop Employe fait");
 			 
-			 sql = "DROP TABLE IF EXISTS Projet";
-			 stmt.executeUpdate(sql);
-			 System.out.println("drop Projet fait");
-			  
 			 
-			 sql = "DROP TABLE IF EXISTS Creneau";
-			 stmt.executeUpdate(sql);
-			 System.out.println("drop Creneaux fait");
-			 
-			 
-			 sql = "DROP TABLE IF EXISTS Salle";
-			 stmt.executeUpdate(sql);
-			 System.out.println("drop Salle fait");
+
 			 
 			 
 			 con.close();
