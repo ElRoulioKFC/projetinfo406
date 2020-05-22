@@ -99,38 +99,43 @@ public class CreationTable {
 			 		" nomClientProj VARCHAR(45) NOT NULL," + 
 			 		" nomProjet VARCHAR(45) NOT NULL," + 
 			 		" idChef INT," + 
-			 		" CONSTRAINT uq_projet_idProjet UNIQUE(nomProjet)," + 
-			 		" CONSTRAINT uq_projet_nomProjet UNIQUE(nomProjet)," + 
-			 		" CONSTRAINT fk_projet_idChef FOREIGN KEY(idChef) " + 
+			 		" CONSTRAINT uq_Projet_nomProjet UNIQUE(nomProjet)," + 
+			 		" CONSTRAINT fk_Projet_idChef FOREIGN KEY(idChef) " + 
 			 		" REFERENCES Employe(idEmploye)" + 
 			 		" );";
 			 stmt.executeUpdate(sql);
 			 System.out.println("Table Projet faite");
 			 
+			 sql = "CREATE TABLE IF NOT EXISTS Competence  (" + 
+			 		" idComp INT AUTO_INCREMENT," + 
+			 		" nomComp VARCHAR (45) NOT NULL," + 
+			 		" typeComp VARCHAR (45) NOT NULL," + 
+			 		" CONSTRAINT uq_Competence_idComp UNIQUE(idComp)," + 
+			 		" CONSTRAINT pk_Competence PRIMARY KEY (idComp)" + 
+			 		" );";
+			 stmt.executeUpdate(sql);
+			 System.out.println("Table Competence faite");
+			 
 			 sql = "CREATE TABLE IF NOT EXISTS Employe_Projet(" + 
-			 		" idEmploye NUMERIC(10) NOT NULL," + 
-			 		" idProjet NUMERIC (10) NOT NULL," + 
-			 		" nbHeureEmpProj (20)," + 
-			 		" CONSTRAINT pk_Employe_projet PRIMARY KEY (idEmploye)," + 
-			 		" CONSTRAINT pk_Employe_projet PRIMARY KEY (idProjet)," + 
-			 		" CONSTRAINT fk_Employe_projet_idEmploye (idEmploye) " + 
+			 		" idEmploye INT," + 
+			 		" idProjet INT," + 
+			 		" nbHeureEmpProj INT," + 
+			 		" CONSTRAINT fk_Employe_Projet_idEmploye FOREIGN KEY(idEmploye) " + 
 			 		" REFERENCES Employe(idEmploye)," + 
-			 		" CONSTRAINT fk_Employe_projet_idProjet (idProjet)" + 
-			 		" REFERENCES projet(idProjet)" + 
+			 		" CONSTRAINT fk_Employe_Projet_idProjet FOREIGN KEY(idProjet)" + 
+			 		" REFERENCES Projet(idProjet)" + 
 			 		" );";
 			 stmt.executeUpdate(sql);
 			 System.out.println("Table Employe_Projet faite");
 			 
 			 sql = "CREATE TABLE IF NOT EXISTS Competence_Employe(" + 
-			 		" idComp NUMERIC(10) NOT NULL," + 
-			 		" idEmploye NUMERIC(10) NOT NULL," + 
-			 		" niveauMaitrise CHAR NOT NULL," + 
-			 		" CONSTRAINT pk_competence_Employe PRIMARY KEY (idEmploye)," + 
-			 		" CONSTRAINT pk_competenec_Employe PRIMARY KEY(idComp)," + 
-			 		" CONSTRAINT fk_competence_Employe_idEmploye FOREIGN KEY (idEmploye)" + 
-			 		" REFERENCES Employe(idEmploye)," + 
-			 		" CONSTRAINT fk_competence_Employe_idComp FOREIGN KEY(idComp)" + 
-			 		" REFERENCES competence(idComp)" + 
+			 		" idCompetence INT," + 
+			 		" idEmp INT," + 
+			 		" niveauMaitrise INT NOT NULL," + 
+			 		" CONSTRAINT fk_Competence_Employe_idCompetence FOREIGN KEY(idCompetence)" + 
+			 		" REFERENCES Competence(idComp)," + 
+			 		" CONSTRAINT fk_Competence_Employe_idEmp FOREIGN KEY (idEmp)" + 
+			 		" REFERENCES Employe(idEmploye)" + 
 			 		" );";
 			 stmt.executeUpdate(sql);
 			 System.out.println("Table Competence_Employe faite");
@@ -139,29 +144,25 @@ public class CreationTable {
 			 		" idCreneau INT AUTO_INCREMENT," + 
 			 		" debutCreneau DATETIME NOT NULL," + 
 			 		" finCreneau DATETIME NOT NULL," + 
-			 		" idProjet NUMERIC (10)," + 
-			 		" idSalle NUMERIC(10)," + 
-			 		" confirmation CHAR NOT NULL," + 
-			 		" CONSTRAINT uq_creneau_idCreneau UNIQUE(idCreneau)," + 
-			 		" CONSTRAINT pk_creneau PRIMARY KEY(idCreneau)," + 
-			 		" CONSTRAINT fk_creneau_idProjet FOREIGN KEY (idProjet)" + 
-			 		" REFERENCES projet(idProjet)," + 
-			 		" CONSTRAINT fk_creneau_idSalle FOREIGN KEY(idSalle)" + 
-			 		" REFERENCES salle(idSalle)" + 
-			 		" );" + 
-			 		" ";
+			 		" idProj INT," + 
+			 		" idSal INT," + 
+			 		" confirmation INT NOT NULL," + 
+			 		" CONSTRAINT pk_Creneau PRIMARY KEY(idCreneau)," + 
+			 		" CONSTRAINT fk_Creneau_idProj FOREIGN KEY (idProj)" + 
+			 		" REFERENCES Projet(idProjet)," + 
+			 		" CONSTRAINT fk_Creneau_idSal FOREIGN KEY(idSal)" + 
+			 		" REFERENCES Salle(idSalle)" + 
+			 		" );";
 			 stmt.executeUpdate(sql);
 			 System.out.println("Table Creneau faite");
 			 
 			 sql = "CREATE TABLE IF NOT EXISTS Employe_Creneau(" + 
-			 		" idEmploye NUMERIC(10) NOT NULL," + 
-			 		" idCreneau NUMERIC(10) NOT NULL," + 
-			 		" CONSTRAINT pk_Employe_creneau PRIMARY KEY(idEmploye)," + 
-			 		" CONSTRAINT pk_Employe_creneau PRIMARY KEY(idCreneay)," + 
-			 		" CONSTRAINT fk_Employe_creneau_idEmploye FOREIGN KEY (idEmploye)" + 
+			 		" idEmp INT," + 
+			 		" idCren INT ," + 
+			 		" CONSTRAINT fk_Employe_Creneau_idEmp FOREIGN KEY (idEmp)" + 
 			 		" REFERENCES Employe(idEmploye)," + 
-			 		" CONSTRAINT fk_Employe_creneau_idCreneau FOREIGN KEY (idCreneau)" + 
-			 		" REFERENCES creneau(idCreneau)" + 
+			 		" CONSTRAINT fk_Employe_Creneau_idCren FOREIGN KEY (idCren)" + 
+			 		" REFERENCES Creneau(idCreneau)" + 
 			 		" );";
 			 stmt.executeUpdate(sql);
 			 System.out.println("Table Employe_Creneau faite");
@@ -170,14 +171,14 @@ public class CreationTable {
 			 sql = " CREATE TABLE IF NOT EXISTS Notif( " + 
 			 		" idNotif INT AUTO_INCREMENT," + 
 			 		" typeNotif VARCHAR(45)," + 
-			 		" idCreneau NUMERIC(10)," + 
-			 		" etatNOTIF CHAR," + 
-			 		" idEmploye NUMERIC(10)," + 
-			 		" CONSTRAINT uq_notif_idNotif UNIQUE(idNotif)," + 
-			 		" CONSTRAINT pk_notif PRIMARY KEY (idNotif)," + 
-			 		" CONSTRAINT fk_notif_idCreneau FOREIGN KEY (idCreneau) " + 
-			 		" REFERENCES creneau(idCreneau)," + 
-			 		" CONSTRAINT fk_notif_idEmploye FOREIGN KEY (idEmploye)" + 
+			 		" idCren INT," + 
+			 		" etatNOTIF INT," + 
+			 		" idEmp INT," + 
+			 		" CONSTRAINT uq_Notif_idNotif UNIQUE(idNotif)," + 
+			 		" CONSTRAINT pk_Notif PRIMARY KEY (idNotif)," + 
+			 		" CONSTRAINT fk_Notif_idCren FOREIGN KEY (idCren) " + 
+			 		" REFERENCES Creneau(idCreneau)," + 
+			 		" CONSTRAINT fk_Notif_idEmp FOREIGN KEY (idEmp)" + 
 			 		" REFERENCES Employe(idEmploye)" + 
 			 		" );";
 			 stmt.executeUpdate(sql);
@@ -190,6 +191,55 @@ public class CreationTable {
 	}
 
 }
+	public static void drop() throws SQLException{
+		String sql = "DROP TABLE IF EXISTS Competence_Employe";
+		try{
+			 connection();
+			 Statement stmt = getCon().createStatement();
+			 stmt.executeUpdate(sql);
+			 System.out.println("drop Competence_Employe fait");
+			 
+			 sql = "DROP TABLE IF EXISTS Employe_Projet";
+			 stmt.executeUpdate(sql);
+			 System.out.println("drop Employe_Projet fait");
 
+			 sql = "DROP TABLE IF EXISTS Competence";
+			 stmt.executeUpdate(sql);
+			 System.out.println("drop Competence fait");
+
+			 sql = "DROP TABLE IF EXISTS Employe_Creneau";
+			 stmt.executeUpdate(sql);
+			 System.out.println("drop Employe_Creneau fait");
+
+			 
+			 sql = "DROP TABLE IF EXISTS Creneau";
+			 stmt.executeUpdate(sql);
+			 System.out.println("drop Creneaux fait");
+			 
+			 
+			 sql = "DROP TABLE IF EXISTS Projet";
+			 stmt.executeUpdate(sql);
+			 System.out.println("drop Projet fait");
+			 
+			 sql = "DROP TABLE IF EXISTS Materiel";
+			 stmt.executeUpdate(sql);
+			 System.out.println("drop Materiel fait");
+			 
+			 sql = "DROP TABLE IF EXISTS Salle";
+			 stmt.executeUpdate(sql);
+			 System.out.println("drop Salle fait");
+
+			 
+			 sql = "DROP TABLE IF EXISTS Employe";
+			 stmt.executeUpdate(sql);
+			 System.out.println("drop Employe fait");
+			 
+
+			 
+			 con.close();
+		} catch(SQLException e){
+			e.printStackTrace();
+		}
+	}
 
 }
