@@ -20,5 +20,16 @@ public class SqlEmploye extends CreationTable{
 		} catch(SQLException e){
 			e.printStackTrace();
 		}
-}
+	}
+	
+	public static void supprime(int idEmploye) throws SQLException{
+		try{
+			 Statement stmt = getCon().createStatement();
+			 String sql = "DELETE FROM ParticipeSalarie WHERE numSalarie ="+ idEmploye;
+			 stmt.executeUpdate(sql);
+			
+		} catch(SQLException e){
+			e.printStackTrace();
+		}
+	}
 }
