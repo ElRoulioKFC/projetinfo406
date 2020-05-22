@@ -15,6 +15,7 @@ public class SqlEmploye extends CreationTable{
 	
 	
 	public static void insertion(String nom, String prenom,int nbHeuresSemEmp,int nbHeureActEmp, String metier, String mailEmp,  String pseudoEmp, String mdpEmp, String roleEmp, int salaireEmp  ) throws SQLException{
+		 connection();
 		String sql = "INSERT INTO Employe(nomEmp, prenomEmp,nbHeuresSemEmp,nbHeureActEmp,metier, mailEmp, pseudoEmp, mdpEmp, roleEmp, salaireEmp ) VALUE('" + nom + "' ,  '"+prenom+"' , '"+nbHeuresSemEmp + "' , '" + nbHeureActEmp+"' , '"+ metier  +"' , '"+ mailEmp  + "' , '" + pseudoEmp + "' , '" + mdpEmp + "' , '" + roleEmp + "' , '" + salaireEmp + "';";
 		try{
 			 Statement stmt = getCon().createStatement();
@@ -23,6 +24,8 @@ public class SqlEmploye extends CreationTable{
 		} catch(SQLException e){
 			e.printStackTrace();
 		}
+		 con.close();
+
 	}
 	
 	public static void supprime(int idEmploye) throws SQLException{
