@@ -8,6 +8,8 @@ public class LancementDebugSQL {
 	
 	public static void main(String[] args) {
 		try {
+			CreationTable.drop();
+
 			CreationTable.creation();
 
 		} catch (SQLException e) {
