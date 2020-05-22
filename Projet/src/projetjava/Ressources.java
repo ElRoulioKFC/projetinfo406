@@ -25,24 +25,24 @@ public class Ressources extends JFrame implements ActionListener{
 		this.setLayout(new FlowLayout()) ;
 		this.setBackground(Color.PINK);  
 		
-		JButton employés = new JButton ("EMPLOYES") ;
+		JButton employes = new JButton ("EMPLOYES") ;
 		JButton salle = new JButton ("SALLE") ;
 		JButton ordinateur = new JButton ("ORDINATEUR") ;
-		this.add(employés , BorderLayout.WEST) ; 	
+		this.add(employes , BorderLayout.WEST) ; 	
 		this.add(salle , BorderLayout.CENTER) ; 	
 		this.add(ordinateur , BorderLayout.EAST) ; 
 		
-		employés.setPreferredSize(new Dimension(100,100));	
+		employes.setPreferredSize(new Dimension(100,100));	
 		salle.setPreferredSize(new Dimension(100,100));	
 		ordinateur.setPreferredSize(new Dimension(110,100));
 		
-		employés.setBackground(Color.cyan) ;
+		employes.setBackground(Color.cyan) ;
 		salle.setBackground(Color.cyan) ;
 		ordinateur.setBackground(Color.cyan) ;
 		
-		/*employés.setBounds(200,150,300,200); */
+		/*employes.setBounds(200,150,300,200); */
 		
-		employés.addActionListener(this) ;
+		employes.addActionListener(this) ;
 		salle.addActionListener(this) ;
 		ordinateur.addActionListener(this) ;
 		
@@ -52,7 +52,7 @@ public class Ressources extends JFrame implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		        new Employés() ;
+		        new Employes() ;
 	}
 	
 	public void actionPerformed1(ActionEvent arg1) {

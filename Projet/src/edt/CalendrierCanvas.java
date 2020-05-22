@@ -33,39 +33,39 @@ public class CalendrierCanvas extends Canvas {
 	private void dessin_cases_calendrier(Date date, int nb_jour, Graphics g) {
 		int largeur=this.getWidth();
 		int hauteur=this.getHeight();
-		int numéro_semaine=0;
+		int numero_semaine=0;
 		for (int i=1;i<=nb_jour;i++) {
 			date.setDate(i);
 			
 			switch (date.getDay()) {
 				case 0:	
-					g.drawRect((largeur-100)/7+650, (hauteur-100)/5+100*numéro_semaine, (largeur-100)/7, (hauteur-100)/5);
-					g.drawString(String.valueOf(date.getDate()),850, 200+100*numéro_semaine);
-					numéro_semaine++;
+					g.drawRect((largeur-100)/7+650, (hauteur-100)/5+100*numero_semaine, (largeur-100)/7, (hauteur-100)/5);
+					g.drawString(String.valueOf(date.getDate()),850, 200+100*numero_semaine);
+					numero_semaine++;
 					break;
 				case 1:	
-					g.drawRect((largeur-100)/7+50, (hauteur-100)/5+100*numéro_semaine, (largeur-100)/7, (hauteur-100)/5);
-					g.drawString(String.valueOf(date.getDate()),250, 200+100*numéro_semaine);
+					g.drawRect((largeur-100)/7+50, (hauteur-100)/5+100*numero_semaine, (largeur-100)/7, (hauteur-100)/5);
+					g.drawString(String.valueOf(date.getDate()),250, 200+100*numero_semaine);
 					break;
 				case 2:	
-					g.drawRect((largeur-100)/7+150, (hauteur-100)/5+100*numéro_semaine, (largeur-100)/7, (hauteur-100)/5);
-					g.drawString(String.valueOf(date.getDate()),350, 200+100*numéro_semaine);
+					g.drawRect((largeur-100)/7+150, (hauteur-100)/5+100*numero_semaine, (largeur-100)/7, (hauteur-100)/5);
+					g.drawString(String.valueOf(date.getDate()),350, 200+100*numero_semaine);
 					break;
 				case 3:	
-					g.drawRect((largeur-100)/7+250, (hauteur-100)/5+100*numéro_semaine, (largeur-100)/7, (hauteur-100)/5);
-					g.drawString(String.valueOf(date.getDate()),450, 200+100*numéro_semaine);
+					g.drawRect((largeur-100)/7+250, (hauteur-100)/5+100*numero_semaine, (largeur-100)/7, (hauteur-100)/5);
+					g.drawString(String.valueOf(date.getDate()),450, 200+100*numero_semaine);
 					break;
 				case 4:	
-					g.drawRect((largeur-100)/7+350, (hauteur-100)/5+100*numéro_semaine, (largeur-100)/7, (hauteur-100)/5);
-					g.drawString(String.valueOf(date.getDate()),550, 200+100*numéro_semaine);
+					g.drawRect((largeur-100)/7+350, (hauteur-100)/5+100*numero_semaine, (largeur-100)/7, (hauteur-100)/5);
+					g.drawString(String.valueOf(date.getDate()),550, 200+100*numero_semaine);
 					break;
 				case 5:	
-					g.drawRect((largeur-100)/7+450, (hauteur-100)/5+100*numéro_semaine, (largeur-100)/7, (hauteur-100)/5);
-					g.drawString(String.valueOf(date.getDate()),650, 200+100*numéro_semaine);
+					g.drawRect((largeur-100)/7+450, (hauteur-100)/5+100*numero_semaine, (largeur-100)/7, (hauteur-100)/5);
+					g.drawString(String.valueOf(date.getDate()),650, 200+100*numero_semaine);
 					break;
 				case 6:	
-					g.drawRect((largeur-100)/7+550, (hauteur-100)/5+100*numéro_semaine, (largeur-100)/7, (hauteur-100)/5);
-					g.drawString(String.valueOf(date.getDate()),750, 200+100*numéro_semaine);
+					g.drawRect((largeur-100)/7+550, (hauteur-100)/5+100*numero_semaine, (largeur-100)/7, (hauteur-100)/5);
+					g.drawString(String.valueOf(date.getDate()),750, 200+100*numero_semaine);
 					break;
 				default :
 					break;
@@ -82,7 +82,7 @@ public class CalendrierCanvas extends Canvas {
 			nb_jour=31;
 			break;
 		case 1 :
-			g.drawString("Février", 200, 150);
+			g.drawString("Fï¿½vrier", 200, 150);
 			if(i%4==0) {
 				nb_jour=29;
 			} else {
@@ -110,7 +110,7 @@ public class CalendrierCanvas extends Canvas {
 			nb_jour=31;
 			break;
 		case 7 :
-			g.drawString("Août", 200, 150);
+			g.drawString("Aoï¿½t", 200, 150);
 			nb_jour=31;
 			break;
 		case 8 :
@@ -126,7 +126,7 @@ public class CalendrierCanvas extends Canvas {
 			nb_jour=30;
 			break;
 		case 11 :
-			g.drawString("Décembre", 200, 150);
+			g.drawString("Dï¿½cembre", 200, 150);
 			nb_jour=31;
 			break;
 		default :

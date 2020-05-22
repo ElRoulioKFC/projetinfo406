@@ -12,17 +12,17 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Employés extends JFrame implements ActionListener{
-	private JComboBox  employés ;
+public class Employes extends JFrame implements ActionListener{
+	private JComboBox  employes ;
 	
 	final static int HAUTEUR = 300 ;
 	final static int LARGEUR = 300 ;
 	
-	public Employés() {
-		setTitle("Employés") ;
+	public Employes() {
+		setTitle("Employes") ;
 		setSize(LARGEUR,HAUTEUR) ;
 		this.setBackground(Color.PINK);
-		add(listedéroulante() , BorderLayout.CENTER);
+		add(listederoulante() , BorderLayout.CENTER);
 		JButton back = new JButton ("BACK") ;
 		this.add(back , BorderLayout.SOUTH) ;
 		back.addActionListener(this);
@@ -30,22 +30,22 @@ public class Employés extends JFrame implements ActionListener{
 		this.setVisible(true) ;
 	}
 	
-	public JPanel listedéroulante() {
+	public JPanel listederoulante() {
 		JPanel panel = new JPanel() ;
 		/* panel.setLayout(new FlowLayout() ); */
 		
-		Object[] elements1 = new Object[] {"employé1","employé2","employé3","employé4",} ;
-		employés = new JComboBox (elements1) ;
-		employés.setBounds(10,10,200,40);
-		panel.add(employés) ;
+		Object[] elements1 = new Object[] {"employe1","employe2","employe3","employe4",} ;
+		employes = new JComboBox (elements1) ;
+		employes.setBounds(10,10,200,40);
+		panel.add(employes) ;
 		JLabel label = new JLabel(" ") ;
 		panel.add(label) ;
 		label.setBounds(10,100,200,40);
-		employés.addActionListener(new ActionListener() {
+		employes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				e.getSource();
-				String s1 = (String) employés.getSelectedItem() ;
-				label.setText("Vous avez sélectionné " + s1 );
+				String s1 = (String) employes.getSelectedItem() ;
+				label.setText("Vous avez selectionne " + s1 );
 				
 			}
 		});
@@ -56,8 +56,8 @@ public class Employés extends JFrame implements ActionListener{
 		
 	}
 	
-	public JComboBox getemployés() {
-		return employés ;
+	public JComboBox getemployes() {
+		return employes ;
 	}
 
 	@Override

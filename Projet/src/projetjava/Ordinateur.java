@@ -26,7 +26,7 @@ public class Ordinateur extends JFrame implements ActionListener{
 		this.setBackground(Color.PINK);
 		this.setLayout(new BorderLayout()) ;
 		this.setLayout(new FlowLayout()) ;
-		add(listedéroulante() , BorderLayout.CENTER);
+		add(listederoulante() , BorderLayout.CENTER);
 		JButton back = new JButton ("BACK") ;
 		this.add(back , BorderLayout.SOUTH) ;
 		back.addActionListener(this);
@@ -34,7 +34,7 @@ public class Ordinateur extends JFrame implements ActionListener{
 		this.setVisible(true) ;
 	}
 	
-	public JPanel listedéroulante() {
+	public JPanel listederoulante() {
 		JPanel panel = new JPanel() ;
 
 		Object[] elements3 = new Object[] {"ordinateur","date d'achat" , "puissance de calcul"} ;
@@ -48,7 +48,7 @@ public class Ordinateur extends JFrame implements ActionListener{
 			public void actionPerformed(ActionEvent e) {
 				e.getSource();
 				String s3 = (String) ordinateur.getSelectedItem() ;
-				label3.setText("Vous avez sélectionné " + s3 );
+				label3.setText("Vous avez selectionne " + s3 );
 				
 			}
 		});

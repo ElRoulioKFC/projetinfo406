@@ -27,20 +27,20 @@ public class Salle extends JFrame implements ActionListener{
 		JButton back = new JButton ("BACK") ;
 		this.add(back , BorderLayout.SOUTH) ;
 		back.addActionListener(this);
-		add(listedéroulante() , BorderLayout.CENTER);
+		add(listederoulante() , BorderLayout.CENTER);
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true) ;
 	}
 	
-	public JPanel listedéroulante() {
+	public JPanel listederoulante() {
 		JPanel panel = new JPanel() ;
 		
 		
 		
 		
 		
-		Object[] elements2 = new Object[] {"salle","n° salle" , "nombre de places "} ;
+		Object[] elements2 = new Object[] {"salle","ne salle" , "nombre de places "} ;
 		salle = new JComboBox (elements2) ;
 		salle.setBounds(10,30,220,40);
 		panel.add(salle) ;
@@ -51,7 +51,7 @@ public class Salle extends JFrame implements ActionListener{
 			public void actionPerformed(ActionEvent e) {
 				e.getSource();
 				String s2 = (String) salle.getSelectedItem() ;
-				label2.setText("Vous avez sélectionné " + s2 );
+				label2.setText("Vous avez selectionne " + s2 );
 				
 			}
 		});
