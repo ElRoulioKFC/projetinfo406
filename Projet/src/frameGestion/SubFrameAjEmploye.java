@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+
+import SQL.SqlEmploye;
 import controleur.Employe;
 import controleur.ListeEmploye;
 
@@ -52,12 +54,14 @@ public class SubFrameAjEmploye extends Frame {
 			String prenomE = prenom.getText();
 			String metierE = metier.getText();
 			String mailE = mail.getText();
-			double nbhE;
+			int nbhE;
 			int salaireE;
-			nbhE = Double.parseDouble(nbh.getText());
+			nbhE = Integer.parseInt(nbh.getText());
 			salaireE = Integer.parseInt(salaire.getText());
 			Employe emp = new Employe(nomE,prenomE,metierE,mailE,nbhE,salaireE);
+			SqlEmploye.insertion(nomE, prenomE, nbhE, 0, metierE, mailE, 1, nomE + prenomE, nomE + prenomE, "Le Role est inutile", salaireE);
 			emp.setId(1);
+			double nb = (double)nbhE;
 			liste.ajouter(emp);//Ajouter la base de donnée
 			System.out.println(liste);
 			d.setVisible(false);
